@@ -1,0 +1,571 @@
+mysql> source C:\Users\vampb\OneDrive\Desktop\hmai_assignment5.sql
+Database changed
++--------+---------------------+---------+------------+-----------+
+| ord_id | ord_date            | cust_id | first_name | last_name |
++--------+---------------------+---------+------------+-----------+
+|    378 | 2014-06-14 00:00:00 |  400300 | Arnold     | McGold    |
+|    106 | 2013-10-01 00:00:00 |  401250 | Samuel     | Morse     |
+|    113 | 2013-11-08 00:00:00 |  401250 | Samuel     | Morse     |
+|    119 | 2013-11-28 00:00:00 |  401250 | Samuel     | Morse     |
+|    301 | 2014-06-04 00:00:00 |  401250 | Samuel     | Morse     |
+|    506 | 2014-01-12 00:00:00 |  401250 | Samuel     | Morse     |
+|    552 | 2014-08-12 00:00:00 |  401250 | Samuel     | Morse     |
+|    112 | 2013-11-08 00:00:00 |  401890 | William    | Northrep  |
+|    519 | 2014-04-04 00:00:00 |  401890 | William    | Northrep  |
+|    114 | 2013-11-08 00:00:00 |  402100 | William    | Morise    |
+|    115 | 2013-11-08 00:00:00 |  402100 | William    | Morise    |
+|    117 | 2013-11-28 00:00:00 |  402100 | William    | Morise    |
+|    105 | 2013-10-01 00:00:00 |  403000 | Sally      | Williams  |
+|    108 | 2013-10-02 00:00:00 |  403000 | Sally      | Williams  |
+|    109 | 2013-10-12 00:00:00 |  403000 | Sally      | Williams  |
+|    111 | 2013-11-01 00:00:00 |  403000 | Sally      | Williams  |
+|    390 | 2014-06-04 00:00:00 |  403000 | Sally      | Williams  |
+|    395 | 2014-06-04 00:00:00 |  403000 | Sally      | Williams  |
+|    412 | 2014-07-01 00:00:00 |  403000 | Sally      | Williams  |
+|    505 | 2014-01-12 00:00:00 |  403000 | Sally      | Williams  |
+|    508 | 2014-02-01 00:00:00 |  403000 | Sally      | Williams  |
+|    509 | 2014-02-12 00:00:00 |  403000 | Sally      | Williams  |
+|    511 | 2014-02-01 00:00:00 |  403000 | Sally      | Williams  |
+|    528 | 2014-05-01 00:00:00 |  403000 | Sally      | Williams  |
+|    529 | 2014-05-12 00:00:00 |  403000 | Sally      | Williams  |
+|    536 | 2014-05-12 00:00:00 |  403000 | Sally      | Williams  |
+|    608 | 2013-09-26 00:00:00 |  403000 | Sally      | Williams  |
+|    611 | 2013-09-30 00:00:00 |  403000 | Sally      | Williams  |
+|    808 | 2014-01-26 00:00:00 |  403000 | Sally      | Williams  |
+|    811 | 2014-01-31 00:00:00 |  403000 | Sally      | Williams  |
+|    118 | 2013-11-28 00:00:00 |  403010 | Elisha     | Otis      |
+|    107 | 2013-10-02 00:00:00 |  403050 | Alexis     | Hamilton  |
+|    227 | 2013-08-01 00:00:00 |  403050 | Alexis     | Hamilton  |
+|    507 | 2014-02-01 00:00:00 |  403050 | Alexis     | Hamilton  |
+|    527 | 2014-05-01 00:00:00 |  403050 | Alexis     | Hamilton  |
+|    400 | 2013-10-15 00:00:00 |  403100 | James      | Stevenson |
+|    401 | 2013-10-15 00:00:00 |  403100 | James      | Stevenson |
+|    402 | 2013-10-18 00:00:00 |  403100 | James      | Stevenson |
+|    407 | 2013-11-15 00:00:00 |  403100 | James      | Stevenson |
+|    302 | 2014-06-04 00:00:00 |  404000 | Frederick  | Olmsted   |
+|    303 | 2014-06-10 00:00:00 |  404100 | D. K.      | Button    |
+|    503 | 2014-01-04 00:00:00 |  404100 | D. K.      | Button    |
+|    504 | 2014-01-11 00:00:00 |  404100 | D. K.      | Button    |
+|    605 | 2013-09-05 00:00:00 |  404100 | D. K.      | Button    |
+|    805 | 2014-01-05 00:00:00 |  404100 | D. K.      | Button    |
+|    520 | 2014-04-04 00:00:00 |  404900 | Al         | Williams  |
+|    110 | 2013-10-12 00:00:00 |  404950 | William    | Morris    |
+|    408 | 2013-11-20 00:00:00 |  404950 | William    | Morris    |
+|    411 | 2014-07-01 00:00:00 |  404950 | William    | Morris    |
+|    510 | 2014-02-01 00:00:00 |  404950 | William    | Morris    |
+|    535 | 2014-05-12 00:00:00 |  404950 | William    | Morris    |
+|    540 | 2014-06-02 00:00:00 |  404950 | William    | Morris    |
+|    116 | 2013-11-12 00:00:00 |  405000 | David      | Day       |
+|    405 | 2013-11-19 00:00:00 |  408770 | Clem       | Clay      |
+|    128 | 2013-12-15 00:00:00 |  409030 | Barry      | Mazur     |
+|    130 | 2013-12-30 00:00:00 |  409030 | Barry      | Mazur     |
+|    324 | 2014-06-11 00:00:00 |  409030 | Barry      | Mazur     |
+|    122 | 2014-01-23 00:00:00 |  409150 | Joan       | Martin    |
+|    123 | 2013-12-05 00:00:00 |  409150 | Joan       | Martin    |
+|    218 | 2013-08-08 00:00:00 |  409150 | Joan       | Martin    |
+|    223 | 2013-08-05 00:00:00 |  409150 | Joan       | Martin    |
+|    413 | 2014-07-07 00:00:00 |  409150 | Joan       | Martin    |
+|    414 | 2014-07-20 00:00:00 |  409150 | Joan       | Martin    |
+|    415 | 2014-07-23 00:00:00 |  409150 | Joan       | Martin    |
+|    515 | 2014-02-02 00:00:00 |  409150 | Joan       | Martin    |
+|    516 | 2014-02-02 00:00:00 |  409150 | Joan       | Martin    |
+|    518 | 2014-02-03 00:00:00 |  409150 | Joan       | Martin    |
+|    522 | 2014-04-05 00:00:00 |  409150 | Joan       | Martin    |
+|    523 | 2014-04-05 00:00:00 |  409150 | Joan       | Martin    |
+|    715 | 2014-04-05 00:00:00 |  409150 | Joan       | Martin    |
+|    716 | 2014-02-06 00:00:00 |  409150 | Joan       | Martin    |
+|    718 | 2014-04-08 00:00:00 |  409150 | Joan       | Martin    |
+|    124 | 2013-12-07 00:00:00 |  409160 | Jane       | Martin    |
+|    125 | 2013-12-09 00:00:00 |  409160 | Jane       | Martin    |
+|    224 | 2013-08-07 00:00:00 |  409160 | Jane       | Martin    |
+|    225 | 2013-08-09 00:00:00 |  409160 | Jane       | Martin    |
+|    524 | 2014-04-07 00:00:00 |  409160 | Jane       | Martin    |
+|    525 | 2014-05-09 00:00:00 |  409160 | Jane       | Martin    |
+|    606 | 2013-09-07 00:00:00 |  409160 | Jane       | Martin    |
+|    607 | 2013-09-15 00:00:00 |  409160 | Jane       | Martin    |
+|    806 | 2014-01-07 00:00:00 |  409160 | Jane       | Martin    |
+|    807 | 2014-01-15 00:00:00 |  409160 | Jane       | Martin    |
+|    126 | 2013-12-15 00:00:00 |  409190 | NULL       | Prince    |
+|    307 | 2014-06-04 00:00:00 |  900300 | Arnold     | McGold    |
+|    609 | 2013-09-27 00:00:00 |  900300 | Arnold     | McGold    |
+|    809 | 2014-01-27 00:00:00 |  900300 | Arnold     | McGold    |
+|    120 | 2014-01-02 00:00:00 |  903000 | Arnold     | McGold    |
+|    121 | 2014-01-03 00:00:00 |  903000 | Arnold     | McGold    |
+|    306 | 2014-06-04 00:00:00 |  903000 | Arnold     | McGold    |
+|    312 | 2014-06-07 00:00:00 |  903000 | Arnold     | McGold    |
+|    313 | 2014-06-07 00:00:00 |  903000 | Arnold     | McGold    |
+|    550 | 2014-08-02 00:00:00 |  903000 | Arnold     | McGold    |
+|    551 | 2014-08-03 00:00:00 |  903000 | Arnold     | McGold    |
+|    610 | 2013-09-27 00:00:00 |  903000 | Arnold     | McGold    |
+|    810 | 2014-01-27 00:00:00 |  903000 | Arnold     | McGold    |
+|    127 | 2013-12-15 00:00:00 |  915001 | Abigail    | Adams     |
+|    129 | 2013-12-15 00:00:00 |  915001 | Abigail    | Adams     |
++--------+---------------------+---------+------------+-----------+
+97 rows in set (0.00 sec)
+
++--------+---------+------------+-----------+---------------------+
+| ord_id | cust_id | first_name | last_name | ord_date            |
++--------+---------+------------+-----------+---------------------+
+|    519 |  401890 | William    | Northrep  | 2014-04-04 00:00:00 |
+|    520 |  404900 | Al         | Williams  | 2014-04-04 00:00:00 |
++--------+---------+------------+-----------+---------------------+
+2 rows in set (0.00 sec)
+
++---------+------------+------------+
+| cust_id | first_name | last_name  |
++---------+------------+------------+
+|  400300 | Arnold     | McGold     |
+|  400801 | Geo        | Washington |
+|  401250 | Samuel     | Morse      |
+|  402100 | William    | Morise     |
+|  402110 | John       | Coltrane   |
+|  402120 | Tyner      | McCoy      |
+|  402500 | Elton John | Jones      |
+|  403000 | Sally      | Williams   |
+|  403010 | Elisha     | Otis       |
+|  403050 | Alexis     | Hamilton   |
+|  403100 | James      | Stevenson  |
+|  403500 | JAMES      | Stevenson  |
+|  403750 | Mary       | O'Leary    |
+|  403760 | Mary       | O'Leary    |
+|  404000 | Frederick  | Olmsted    |
+|  404100 | D. K.      | Button     |
+|  404150 | Tom        | Dancer     |
+|  404180 | Danielle   | Shay       |
+|  404890 | Florence   | Kelley     |
+|  404950 | William    | Morris     |
+|  405000 | David      | Day        |
+|  408770 | Clem       | Clay       |
+|  409010 | William    | Morris     |
+|  409020 | William    | Max        |
+|  409030 | Barry      | Mazur      |
+|  409150 | Joan       | Martin     |
+|  409160 | Jane       | Martin     |
+|  409190 | NULL       | Prince     |
+|  900300 | Arnold     | McGold     |
+|  903000 | Arnold     | McGold     |
+|  915001 | Abigail    | Adams      |
++---------+------------+------------+
+31 rows in set (0.00 sec)
+
++--------+---------------------+---------+------------------------------------------------+---------+
+| ord_id | ord_date            | prod_id | prod_desc                                      | catg_id |
++--------+---------------------+---------+------------------------------------------------+---------+
+|    109 | 2013-10-12 00:00:00 |    1130 | Mini freezer, sized for the office             | APL     |
+|    110 | 2013-10-12 00:00:00 |    1130 | Mini freezer, sized for the office             | APL     |
+|    114 | 2013-11-08 00:00:00 |    1130 | Mini freezer, sized for the office             | APL     |
+|    115 | 2013-11-08 00:00:00 |    1120 | Full-sized Washer                              | APL     |
+|    118 | 2013-11-28 00:00:00 |    1125 | Low Energy Dryer                               | APL     |
+|    130 | 2013-12-30 00:00:00 |    1125 | Low Energy Dryer                               | APL     |
+|    130 | 2013-12-30 00:00:00 |    1120 | Full-sized Washer                              | APL     |
+|    218 | 2013-08-08 00:00:00 |    1125 | Low Energy Dryer                               | APL     |
+|    223 | 2013-08-05 00:00:00 |    1130 | Mini freezer, sized for the office             | APL     |
+|    306 | 2014-06-04 00:00:00 |    1120 | Full-sized Washer                              | APL     |
+|    306 | 2014-06-04 00:00:00 |    1125 | Low Energy Dryer                               | APL     |
+|    307 | 2014-06-04 00:00:00 |    1120 | Full-sized Washer                              | APL     |
+|    307 | 2014-06-04 00:00:00 |    1125 | Low Energy Dryer                               | APL     |
+|    378 | 2014-06-14 00:00:00 |    1125 | Low Energy Dryer                               | APL     |
+|    378 | 2014-06-14 00:00:00 |    1120 | Full-sized Washer                              | APL     |
+|    412 | 2014-07-01 00:00:00 |    1130 | Mini freezer, sized for the office             | APL     |
+|    415 | 2014-07-23 00:00:00 |    1125 | Low Energy Dryer                               | APL     |
+|    503 | 2014-01-04 00:00:00 |    1130 | Mini freezer, sized for the office             | APL     |
+|    504 | 2014-01-11 00:00:00 |    1130 | Mini freezer, sized for the office             | APL     |
+|    509 | 2014-02-12 00:00:00 |    1130 | Mini freezer, sized for the office             | APL     |
+|    511 | 2014-02-01 00:00:00 |    1130 | Mini freezer, sized for the office             | APL     |
+|    518 | 2014-02-03 00:00:00 |    1125 | Low Energy Dryer                               | APL     |
+|    523 | 2014-04-05 00:00:00 |    1130 | Mini freezer, sized for the office             | APL     |
+|    529 | 2014-05-12 00:00:00 |    1130 | Mini freezer, sized for the office             | APL     |
+|    605 | 2013-09-05 00:00:00 |    1130 | Mini freezer, sized for the office             | APL     |
+|    718 | 2014-04-08 00:00:00 |    1125 | Low Energy Dryer                               | APL     |
+|    805 | 2014-01-05 00:00:00 |    1130 | Mini freezer, sized for the office             | APL     |
+|    400 | 2013-10-15 00:00:00 |    5002 | 16 oz Jacketed Graphite Ball-peen hammer       | HD      |
+|    400 | 2013-10-15 00:00:00 |    5004 | 10 oz Steel Head Dead Blow hammer              | HD      |
+|    400 | 2013-10-15 00:00:00 |    5005 | Steel Shingler hammerhammer                    | HD      |
+|    400 | 2013-10-15 00:00:00 |    5008 | 22 oz Graphite checkered face framing hammer   | HD      |
+|    401 | 2013-10-15 00:00:00 |    5002 | 16 oz Jacketed Graphite Ball-peen hammer       | HD      |
+|    402 | 2013-10-18 00:00:00 |    5002 | 16 oz Jacketed Graphite Ball-peen hammer       | HD      |
+|    407 | 2013-11-15 00:00:00 |    5005 | Steel Shingler hammerhammer                    | HD      |
+|    407 | 2013-11-15 00:00:00 |    5005 | Steel Shingler hammerhammer                    | HD      |
+|    407 | 2013-11-15 00:00:00 |    5008 | 22 oz Graphite checkered face framing hammer   | HD      |
+|    107 | 2013-10-02 00:00:00 |    1110 | Electric Pancake griddle                       | HW      |
+|    108 | 2013-10-02 00:00:00 |    1080 | Cornpopper 12 quart automatic shutoff          | HW      |
+|    110 | 2013-10-12 00:00:00 |    1090 | Gas grill                                      | HW      |
+|    112 | 2013-11-08 00:00:00 |    1110 | Electric Pancake griddle                       | HW      |
+|    113 | 2013-11-08 00:00:00 |    1080 | Cornpopper 12 quart automatic shutoff          | HW      |
+|    115 | 2013-11-08 00:00:00 |    1080 | Cornpopper 12 quart automatic shutoff          | HW      |
+|    115 | 2013-11-08 00:00:00 |    1000 | Seven speed BnD hand mixer, black              | HW      |
+|    115 | 2013-11-08 00:00:00 |    1100 | Twelve-speed Blender                           | HW      |
+|    119 | 2013-11-28 00:00:00 |    1070 | Steam and dry iron SunShine, Yellow            | HW      |
+|    122 | 2014-01-23 00:00:00 |    1070 | Steam and dry iron SunShine, Yellow            | HW      |
+|    122 | 2014-01-23 00:00:00 |    1072 | Steam and dry iron SunShine, Red               | HW      |
+|    122 | 2014-01-23 00:00:00 |    1071 | Steam and dry iron SunShine, Blue              | HW      |
+|    122 | 2014-01-23 00:00:00 |    1070 | Steam and dry iron SunShine, Yellow            | HW      |
+|    126 | 2013-12-15 00:00:00 |    1100 | Twelve-speed Blender                           | HW      |
+|    127 | 2013-12-15 00:00:00 |    1080 | Cornpopper 12 quart automatic shutoff          | HW      |
+|    127 | 2013-12-15 00:00:00 |    1110 | Electric Pancake griddle                       | HW      |
+|    127 | 2013-12-15 00:00:00 |    1100 | Twelve-speed Blender                           | HW      |
+|    130 | 2013-12-30 00:00:00 |    1090 | Gas grill                                      | HW      |
+|    224 | 2013-08-07 00:00:00 |    1070 | Steam and dry iron SunShine, Yellow            | HW      |
+|    224 | 2013-08-07 00:00:00 |    1090 | Gas grill                                      | HW      |
+|    301 | 2014-06-04 00:00:00 |    1100 | Twelve-speed Blender                           | HW      |
+|    303 | 2014-06-10 00:00:00 |    1000 | Seven speed BnD hand mixer, black              | HW      |
+|    313 | 2014-06-07 00:00:00 |    1000 | Seven speed BnD hand mixer, black              | HW      |
+|    408 | 2013-11-20 00:00:00 |    1071 | Steam and dry iron SunShine, Blue              | HW      |
+|    411 | 2014-07-01 00:00:00 |    1071 | Steam and dry iron SunShine, Blue              | HW      |
+|    411 | 2014-07-01 00:00:00 |    1072 | Steam and dry iron SunShine, Red               | HW      |
+|    413 | 2014-07-07 00:00:00 |    1110 | Electric Pancake griddle                       | HW      |
+|    505 | 2014-01-12 00:00:00 |    1110 | Electric Pancake griddle                       | HW      |
+|    505 | 2014-01-12 00:00:00 |    1080 | Cornpopper 12 quart automatic shutoff          | HW      |
+|    507 | 2014-02-01 00:00:00 |    1090 | Gas grill                                      | HW      |
+|    509 | 2014-02-12 00:00:00 |    1090 | Gas grill                                      | HW      |
+|    510 | 2014-02-01 00:00:00 |    1071 | Steam and dry iron SunShine, Blue              | HW      |
+|    510 | 2014-02-01 00:00:00 |    1072 | Steam and dry iron SunShine, Red               | HW      |
+|    515 | 2014-02-02 00:00:00 |    1110 | Electric Pancake griddle                       | HW      |
+|    519 | 2014-04-04 00:00:00 |    1110 | Electric Pancake griddle                       | HW      |
+|    522 | 2014-04-05 00:00:00 |    1080 | Cornpopper 12 quart automatic shutoff          | HW      |
+|    524 | 2014-04-07 00:00:00 |    1090 | Gas grill                                      | HW      |
+|    524 | 2014-04-07 00:00:00 |    1070 | Steam and dry iron SunShine, Yellow            | HW      |
+|    528 | 2014-05-01 00:00:00 |    1070 | Steam and dry iron SunShine, Yellow            | HW      |
+|    540 | 2014-06-02 00:00:00 |    1080 | Cornpopper 12 quart automatic shutoff          | HW      |
+|    540 | 2014-06-02 00:00:00 |    1110 | Electric Pancake griddle                       | HW      |
+|    605 | 2013-09-05 00:00:00 |    1080 | Cornpopper 12 quart automatic shutoff          | HW      |
+|    605 | 2013-09-05 00:00:00 |    1080 | Cornpopper 12 quart automatic shutoff          | HW      |
+|    607 | 2013-09-15 00:00:00 |    1070 | Steam and dry iron SunShine, Yellow            | HW      |
+|    608 | 2013-09-26 00:00:00 |    1000 | Seven speed BnD hand mixer, black              | HW      |
+|    609 | 2013-09-27 00:00:00 |    1080 | Cornpopper 12 quart automatic shutoff          | HW      |
+|    611 | 2013-09-30 00:00:00 |    1080 | Cornpopper 12 quart automatic shutoff          | HW      |
+|    715 | 2014-04-05 00:00:00 |    1110 | Electric Pancake griddle                       | HW      |
+|    805 | 2014-01-05 00:00:00 |    1080 | Cornpopper 12 quart automatic shutoff          | HW      |
+|    807 | 2014-01-15 00:00:00 |    1070 | Steam and dry iron SunShine, Yellow            | HW      |
+|    808 | 2014-01-26 00:00:00 |    1000 | Seven speed BnD hand mixer, black              | HW      |
+|    809 | 2014-01-27 00:00:00 |    1080 | Cornpopper 12 quart automatic shutoff          | HW      |
+|    811 | 2014-01-31 00:00:00 |    1080 | Cornpopper 12 quart automatic shutoff          | HW      |
+|    811 | 2014-01-31 00:00:00 |    1080 | Cornpopper 12 quart automatic shutoff          | HW      |
+|    218 | 2013-08-08 00:00:00 |    2746 | Charles Mingus - Blues & Politics              | MUS     |
+|    218 | 2013-08-08 00:00:00 |    2014 | Bix Beiderbecke - Tiger Rag                    | MUS     |
+|    225 | 2013-08-09 00:00:00 |    2412 | David Newman - Davey Blue                      | MUS     |
+|    225 | 2013-08-09 00:00:00 |    2947 | Ornette Coleman - Sound Grammer                | MUS     |
+|    413 | 2014-07-07 00:00:00 |    2984 | John Coltrane - Lush Life                      | MUS     |
+|    413 | 2014-07-07 00:00:00 |    2014 | Bix Beiderbecke - Tiger Rag                    | MUS     |
+|    518 | 2014-02-03 00:00:00 |    2014 | Bix Beiderbecke - Tiger Rag                    | MUS     |
+|    518 | 2014-02-03 00:00:00 |    2984 | John Coltrane - Lush Life                      | MUS     |
+|    520 | 2014-04-04 00:00:00 |    2747 | Charles Mingus - Blues & Roots                 | MUS     |
+|    525 | 2014-05-09 00:00:00 |    2412 | David Newman - Davey Blue                      | MUS     |
+|    525 | 2014-05-09 00:00:00 |    2746 | Charles Mingus - Blues & Politics              | MUS     |
+|    525 | 2014-05-09 00:00:00 |    2014 | Bix Beiderbecke - Tiger Rag                    | MUS     |
+|    525 | 2014-05-09 00:00:00 |    2947 | Ornette Coleman - Sound Grammer                | MUS     |
+|    552 | 2014-08-12 00:00:00 |    2014 | Bix Beiderbecke - Tiger Rag                    | MUS     |
+|    552 | 2014-08-12 00:00:00 |    2984 | John Coltrane - Lush Life                      | MUS     |
+|    715 | 2014-04-05 00:00:00 |    2014 | Bix Beiderbecke - Tiger Rag                    | MUS     |
+|    715 | 2014-04-05 00:00:00 |    2984 | John Coltrane - Lush Life                      | MUS     |
+|    111 | 2013-11-01 00:00:00 |    1141 | Bird cage- deluxe;floor model, with fly space  | PET     |
+|    111 | 2013-11-01 00:00:00 |    1150 | Cat exerciser                                  | PET     |
+|    117 | 2013-11-28 00:00:00 |    1141 | Bird cage- deluxe;floor model, with fly space  | PET     |
+|    117 | 2013-11-28 00:00:00 |    1150 | Cat exerciser                                  | PET     |
+|    124 | 2013-12-07 00:00:00 |    1151 | Cat pillow, removable cloth cover              | PET     |
+|    125 | 2013-12-09 00:00:00 |    1152 | Cat pillow, removable leather cover            | PET     |
+|    129 | 2013-12-15 00:00:00 |    1141 | Bird cage- deluxe;floor model, with fly space  | PET     |
+|    218 | 2013-08-08 00:00:00 |    1141 | Bird cage- deluxe;floor model, with fly space  | PET     |
+|    223 | 2013-08-05 00:00:00 |    1141 | Bird cage- deluxe;floor model, with fly space  | PET     |
+|    223 | 2013-08-05 00:00:00 |    1150 | Cat exerciser                                  | PET     |
+|    227 | 2013-08-01 00:00:00 |    1141 | Bird cage- deluxe;floor model, with fly space  | PET     |
+|    227 | 2013-08-01 00:00:00 |    1150 | Cat exerciser                                  | PET     |
+|    302 | 2014-06-04 00:00:00 |    1140 | Bird cage- simple; wire frame two feeder trays | PET     |
+|    324 | 2014-06-11 00:00:00 |    4576 | Primo brand of catnip for your favorite cat    | PET     |
+|    401 | 2013-10-15 00:00:00 |    4577 | Leather cat leash with harness                 | PET     |
+|    402 | 2013-10-18 00:00:00 |    4577 | Leather cat leash with harness                 | PET     |
+|    415 | 2014-07-23 00:00:00 |    1141 | Bird cage- deluxe;floor model, with fly space  | PET     |
+|    508 | 2014-02-01 00:00:00 |    1152 | Cat pillow, removable leather cover            | PET     |
+|    508 | 2014-02-01 00:00:00 |    1152 | Cat pillow, removable leather cover            | PET     |
+|    518 | 2014-02-03 00:00:00 |    1141 | Bird cage- deluxe;floor model, with fly space  | PET     |
+|    527 | 2014-05-01 00:00:00 |    1150 | Cat exerciser                                  | PET     |
+|    527 | 2014-05-01 00:00:00 |    1141 | Bird cage- deluxe;floor model, with fly space  | PET     |
+|    540 | 2014-06-02 00:00:00 |    1152 | Cat pillow, removable leather cover            | PET     |
+|    606 | 2013-09-07 00:00:00 |    1152 | Cat pillow, removable leather cover            | PET     |
+|    610 | 2013-09-27 00:00:00 |    4577 | Leather cat leash with harness                 | PET     |
+|    718 | 2014-04-08 00:00:00 |    1141 | Bird cage- deluxe;floor model, with fly space  | PET     |
+|    806 | 2014-01-07 00:00:00 |    1152 | Cat pillow, removable leather cover            | PET     |
+|    810 | 2014-01-27 00:00:00 |    4577 | Leather cat leash with harness                 | PET     |
+|    105 | 2013-10-01 00:00:00 |    1020 | Cork-backed dartboard with hanger              | SPG     |
+|    105 | 2013-10-01 00:00:00 |    1010 | Set of 12 barbells 15 pounds                   | SPG     |
+|    105 | 2013-10-01 00:00:00 |    1030 | Basketball                                     | SPG     |
+|    106 | 2013-10-01 00:00:00 |    1060 | Deluxe Mountain bike                           | SPG     |
+|    117 | 2013-11-28 00:00:00 |    1030 | Basketball                                     | SPG     |
+|    120 | 2014-01-02 00:00:00 |    1010 | Set of 12 barbells 15 pounds                   | SPG     |
+|    121 | 2014-01-03 00:00:00 |    1010 | Set of 12 barbells 15 pounds                   | SPG     |
+|    121 | 2014-01-03 00:00:00 |    1040 | Super Flyer Treadmill                          | SPG     |
+|    128 | 2013-12-15 00:00:00 |    1060 | Deluxe Mountain bike                           | SPG     |
+|    302 | 2014-06-04 00:00:00 |    1040 | Super Flyer Treadmill                          | SPG     |
+|    312 | 2014-06-07 00:00:00 |    1040 | Super Flyer Treadmill                          | SPG     |
+|    312 | 2014-06-07 00:00:00 |    1050 | Deluxe Stationary bike                         | SPG     |
+|    312 | 2014-06-07 00:00:00 |    1060 | Deluxe Mountain bike                           | SPG     |
+|    312 | 2014-06-07 00:00:00 |    1060 | Deluxe Mountain bike                           | SPG     |
+|    390 | 2014-06-04 00:00:00 |    1010 | Set of 12 barbells 15 pounds                   | SPG     |
+|    395 | 2014-06-04 00:00:00 |    1010 | Set of 12 barbells 15 pounds                   | SPG     |
+|    405 | 2013-11-19 00:00:00 |    1060 | Deluxe Mountain bike                           | SPG     |
+|    405 | 2013-11-19 00:00:00 |    1050 | Deluxe Stationary bike                         | SPG     |
+|    405 | 2013-11-19 00:00:00 |    1010 | Set of 12 barbells 15 pounds                   | SPG     |
+|    405 | 2013-11-19 00:00:00 |    1040 | Super Flyer Treadmill                          | SPG     |
+|    405 | 2013-11-19 00:00:00 |    1020 | Cork-backed dartboard with hanger              | SPG     |
+|    405 | 2013-11-19 00:00:00 |    1030 | Basketball                                     | SPG     |
+|    411 | 2014-07-01 00:00:00 |    1060 | Deluxe Mountain bike                           | SPG     |
+|    414 | 2014-07-20 00:00:00 |    1020 | Cork-backed dartboard with hanger              | SPG     |
+|    505 | 2014-01-12 00:00:00 |    1060 | Deluxe Mountain bike                           | SPG     |
+|    511 | 2014-02-01 00:00:00 |    1060 | Deluxe Mountain bike                           | SPG     |
+|    516 | 2014-02-02 00:00:00 |    1020 | Cork-backed dartboard with hanger              | SPG     |
+|    519 | 2014-04-04 00:00:00 |    1020 | Cork-backed dartboard with hanger              | SPG     |
+|    520 | 2014-04-04 00:00:00 |    1020 | Cork-backed dartboard with hanger              | SPG     |
+|    528 | 2014-05-01 00:00:00 |    1030 | Basketball                                     | SPG     |
+|    528 | 2014-05-01 00:00:00 |    1010 | Set of 12 barbells 15 pounds                   | SPG     |
+|    529 | 2014-05-12 00:00:00 |    1020 | Cork-backed dartboard with hanger              | SPG     |
+|    535 | 2014-05-12 00:00:00 |    1050 | Deluxe Stationary bike                         | SPG     |
+|    535 | 2014-05-12 00:00:00 |    1040 | Super Flyer Treadmill                          | SPG     |
+|    536 | 2014-05-12 00:00:00 |    1050 | Deluxe Stationary bike                         | SPG     |
+|    536 | 2014-05-12 00:00:00 |    1040 | Super Flyer Treadmill                          | SPG     |
+|    550 | 2014-08-02 00:00:00 |    1040 | Super Flyer Treadmill                          | SPG     |
+|    550 | 2014-08-02 00:00:00 |    1010 | Set of 12 barbells 15 pounds                   | SPG     |
+|    551 | 2014-08-03 00:00:00 |    1010 | Set of 12 barbells 15 pounds                   | SPG     |
+|    605 | 2013-09-05 00:00:00 |    1010 | Set of 12 barbells 15 pounds                   | SPG     |
+|    605 | 2013-09-05 00:00:00 |    1060 | Deluxe Mountain bike                           | SPG     |
+|    605 | 2013-09-05 00:00:00 |    1020 | Cork-backed dartboard with hanger              | SPG     |
+|    608 | 2013-09-26 00:00:00 |    1020 | Cork-backed dartboard with hanger              | SPG     |
+|    609 | 2013-09-27 00:00:00 |    1040 | Super Flyer Treadmill                          | SPG     |
+|    609 | 2013-09-27 00:00:00 |    1010 | Set of 12 barbells 15 pounds                   | SPG     |
+|    716 | 2014-02-06 00:00:00 |    1020 | Cork-backed dartboard with hanger              | SPG     |
+|    805 | 2014-01-05 00:00:00 |    1060 | Deluxe Mountain bike                           | SPG     |
+|    808 | 2014-01-26 00:00:00 |    1020 | Cork-backed dartboard with hanger              | SPG     |
+|    808 | 2014-01-26 00:00:00 |    1010 | Set of 12 barbells 15 pounds                   | SPG     |
++--------+---------------------+---------+------------------------------------------------+---------+
+184 rows in set (0.00 sec)
+
++--------+---------------------+------------+-----------+
+| ord_id | ord_date            | first_name | last_name |
++--------+---------------------+------------+-----------+
+|    106 | 2013-10-01 00:00:00 | Samuel     | Morse     |
+|    113 | 2013-11-08 00:00:00 | Samuel     | Morse     |
+|    119 | 2013-11-28 00:00:00 | Samuel     | Morse     |
+|    301 | 2014-06-04 00:00:00 | Samuel     | Morse     |
+|    506 | 2014-01-12 00:00:00 | Samuel     | Morse     |
+|    552 | 2014-08-12 00:00:00 | Samuel     | Morse     |
++--------+---------------------+------------+-----------+
+6 rows in set (0.00 sec)
+
++---------+----------+--------+---------+-----------------+
+| cust_id | Customer | ord_id | prod_id | prod_name       |
++---------+----------+--------+---------+-----------------+
+|  400300 | McGold   |    378 |    1120 | Washer          |
+|  400300 | McGold   |    378 |    1125 | Dryer           |
+|  401250 | Morse    |    106 |    1060 | Mountain bike   |
+|  401250 | Morse    |    113 |    1080 | Cornpopper      |
+|  401250 | Morse    |    119 |    1070 | Iron            |
+|  401250 | Morse    |    301 |    1100 | Blender         |
+|  401250 | Morse    |    552 |    2984 | B000000Y7L      |
+|  401250 | Morse    |    552 |    2014 | B000005INR      |
+|  401890 | Northrep |    112 |    1110 | Pancake griddle |
+|  401890 | Northrep |    519 |    1020 | Dartboard       |
++---------+----------+--------+---------+-----------------+
+10 rows in set (0.00 sec)
+
++---------+----------+--------+---------+------------+
+| cust_id | Customer | ord_id | prod_id | prod_name  |
++---------+----------+--------+---------+------------+
+|  409150 | Martin   |    218 |    2014 | B000005INR |
+|  409150 | Martin   |    413 |    2014 | B000005INR |
+|  409150 | Martin   |    518 |    2014 | B000005INR |
+|  409160 | Martin   |    525 |    2014 | B000005INR |
+|  401250 | Morse    |    552 |    2014 | B000005INR |
+|  409150 | Martin   |    715 |    2014 | B000005INR |
+|  409160 | Martin   |    225 |    2412 | B00005UF3I |
+|  409160 | Martin   |    525 |    2412 | B00005UF3I |
+|  409150 | Martin   |    218 |    2746 | B00000JWCM |
+|  409160 | Martin   |    525 |    2746 | B00000JWCM |
+|  404900 | Williams |    520 |    2747 | B000002I4Q |
+|  409160 | Martin   |    225 |    2947 | B000GFRE76 |
+|  409160 | Martin   |    525 |    2947 | B000GFRE76 |
+|  409150 | Martin   |    413 |    2984 | B000000Y7L |
+|  409150 | Martin   |    518 |    2984 | B000000Y7L |
+|  401250 | Morse    |    552 |    2984 | B000000Y7L |
+|  409150 | Martin   |    715 |    2984 | B000000Y7L |
++---------+----------+--------+---------+------------+
+17 rows in set (0.00 sec)
+
++---------+--------------+-----------+
+| cust_id | credit_limit | rating    |
++---------+--------------+-----------+
+|  400300 |         6000 | Excellent |
+|  400801 |          750 | Standard  |
+|  401250 |          750 | Standard  |
+|  401890 |         1750 | Standard  |
+|  402100 |          750 | Standard  |
+|  402110 |          750 | Standard  |
+|  402120 |          750 | Standard  |
+|  402500 |         NULL | Standard  |
+|  403000 |         6000 | Excellent |
+|  403010 |         6000 | Excellent |
+|  403050 |         6000 | Excellent |
+|  403100 |         6000 | Excellent |
+|  403500 |         6000 | Excellent |
+|  403750 |         6000 | Excellent |
+|  403760 |         6000 | Excellent |
+|  404000 |         3500 | Good      |
+|  404100 |         3500 | Good      |
+|  404150 |         3500 | Good      |
+|  404180 |         3500 | Good      |
+|  404890 |         1750 | Standard  |
+|  404900 |         1750 | Standard  |
+|  404950 |         1750 | Standard  |
+|  405000 |         NULL | Standard  |
+|  408770 |         7500 | Excellent |
+|  409010 |         1750 | Standard  |
+|  409020 |         1750 | Standard  |
+|  409030 |         6000 | Excellent |
+|  409150 |         1750 | Standard  |
+|  409160 |         1750 | Standard  |
+|  409190 |         1750 | Standard  |
+|  900300 |         6000 | Excellent |
+|  903000 |         6000 | Excellent |
+|  915001 |         1750 | Standard  |
++---------+--------------+-----------+
+33 rows in set (0.00 sec)
+
++---------+-----------------------------------+---------+--------+
+| prod_id | prod_desc                         | catg_id | ord_id |
++---------+-----------------------------------+---------+--------+
+|    2014 | Bix Beiderbecke - Tiger Rag       | MUS     |    218 |
+|    2014 | Bix Beiderbecke - Tiger Rag       | MUS     |    413 |
+|    2014 | Bix Beiderbecke - Tiger Rag       | MUS     |    518 |
+|    2014 | Bix Beiderbecke - Tiger Rag       | MUS     |    525 |
+|    2014 | Bix Beiderbecke - Tiger Rag       | MUS     |    552 |
+|    2014 | Bix Beiderbecke - Tiger Rag       | MUS     |    715 |
+|    2412 | David Newman - Davey Blue         | MUS     |    225 |
+|    2412 | David Newman - Davey Blue         | MUS     |    525 |
+|    2746 | Charles Mingus - Blues & Politics | MUS     |    218 |
+|    2746 | Charles Mingus - Blues & Politics | MUS     |    525 |
+|    2747 | Charles Mingus - Blues & Roots    | MUS     |    520 |
+|    2947 | Ornette Coleman - Sound Grammer   | MUS     |    225 |
+|    2947 | Ornette Coleman - Sound Grammer   | MUS     |    525 |
+|    2984 | John Coltrane - Lush Life         | MUS     |    413 |
+|    2984 | John Coltrane - Lush Life         | MUS     |    518 |
+|    2984 | John Coltrane - Lush Life         | MUS     |    552 |
+|    2984 | John Coltrane - Lush Life         | MUS     |    715 |
++---------+-----------------------------------+---------+--------+
+17 rows in set (0.00 sec)
+
++---------+------------+--------+
+| cust_id | last_name  | ord_id |
++---------+------------+--------+
+|  400300 | McGold     |    378 |
+|  400801 | Washington |   NULL |
+|  401250 | Morse      |    106 |
+|  401250 | Morse      |    113 |
+|  401250 | Morse      |    119 |
+|  401250 | Morse      |    301 |
+|  401250 | Morse      |    506 |
+|  401250 | Morse      |    552 |
++---------+------------+--------+
+8 rows in set (0.00 sec)
+
++---------+---------------------+----------------+
+| prod_id | prod_name           | catg_desc      |
++---------+---------------------+----------------+
+|    1120 | Washer              | APPLIANCES     |
+|    1125 | Dryer               | APPLIANCES     |
+|    1126 | WasherDryer         | APPLIANCES     |
+|    1130 | Mini Freezer        | APPLIANCES     |
+|    4569 | Mini Dryer          | APPLIANCES     |
+|    5000 | Fingerling Potatoes | GOURMET FOOD   |
+|    5001 | Ginger Preserve     | GOURMET FOOD   |
+|    5002 | Ball-Peen Hammer    | HARDWARE       |
+|    5004 | Dead Blow Hammer    | HARDWARE       |
+|    5005 | Shingler Hammer     | HARDWARE       |
+|    5008 | Claw Framing        | HARDWARE       |
+|    1000 | Hand Mixer          | HOUSEWARES     |
+|    1070 | Iron                | HOUSEWARES     |
+|    1071 | Iron                | HOUSEWARES     |
+|    1072 | Iron                | HOUSEWARES     |
+|    1080 | Cornpopper          | HOUSEWARES     |
+|    1090 | Gas grill           | HOUSEWARES     |
+|    1100 | Blender             | HOUSEWARES     |
+|    1110 | Pancake griddle     | HOUSEWARES     |
+|    1160 | Mixer Deluxe        | HOUSEWARES     |
+|    4575 | Electric can opener | HOUSEWARES     |
+|    2014 | B000005INR          | MUSIC          |
+|    2234 | B000002I7U          | MUSIC          |
+|    2337 | B000005H40          | MUSIC          |
+|    2412 | B00005UF3I          | MUSIC          |
+|    2487 | B004Y03N7E          | MUSIC          |
+|    2746 | B00000JWCM          | MUSIC          |
+|    2747 | B000002I4Q          | MUSIC          |
+|    2933 | B0006J2FLW          | MUSIC          |
+|    2947 | B000GFRE76          | MUSIC          |
+|    2984 | B000000Y7L          | MUSIC          |
+|    2987 | B000005HGK          | MUSIC          |
+|    1140 | Bird cage- simple   | PET SUPPLIES   |
+|    1141 | Bird cage- deluxe   | PET SUPPLIES   |
+|    1142 | Bird seed           | PET SUPPLIES   |
+|    1143 | Bird seed deluxe    | PET SUPPLIES   |
+|    1150 | Cat exerciser       | PET SUPPLIES   |
+|    1151 | Cat pillow          | PET SUPPLIES   |
+|    1152 | Cat pillow Leather  | PET SUPPLIES   |
+|    4567 | Deluxe Cat Tree     | PET SUPPLIES   |
+|    4568 | Deluxe Cat Bed      | PET SUPPLIES   |
+|    4576 | Cosmo cat nip       | PET SUPPLIES   |
+|    4577 | Cat leash           | PET SUPPLIES   |
+|    1010 | Weights             | SPORTING GOODS |
+|    1020 | Dartboard           | SPORTING GOODS |
+|    1030 | Basketball          | SPORTING GOODS |
+|    1040 | Treadmill           | SPORTING GOODS |
+|    1050 | Stationary bike     | SPORTING GOODS |
+|    1060 | Mountain bike       | SPORTING GOODS |
++---------+---------------------+----------------+
+49 rows in set (0.00 sec)
+
++------------+----------------+----------------+-----------+
+| first_name | last_name      | mgr_first_name | mgr_last  |
++------------+----------------+----------------+-----------+
+| Steven     | King           | NULL           | NULL      |
+| Neena      | Kochhar        | Steven         | King      |
+| Lex        | De Haan        | Steven         | King      |
+| Alexander  | Hunold         | Lex            | De Haan   |
+| Bruce      | Ernst          | Alexander      | Hunold    |
+| Diana      | Lorentz        | Alexander      | Hunold    |
+| Kevin      | Mourgos        | Steven         | King      |
+| Trenna     | Rajs           | Kevin          | Mourgos   |
+| Curtis     | Davies         | Kevin          | Mourgos   |
+| Randall    | Matos          | Kevin          | Mourgos   |
+| Peter      | Vargas         | Kevin          | Mourgos   |
+| Eleni      | Zlotkey        | Steven         | King      |
+| Ellen      | Abel           | Eleni          | Zlotkey   |
+| Jonathon   | Taylor         | Eleni          | Zlotkey   |
+| Kimberely  | Grant          | Eleni          | Zlotkey   |
+| Jennifer   | Whalen         | Neena          | Kochhar   |
+| Michael    | Hartstein      | Steven         | King      |
+| Pat        | Fay            | Michael        | Hartstein |
+| Shelley    | Higgins        | Neena          | Kochhar   |
+| William    | Gietz          | Shelley        | Higgins   |
+| Sophia     | Barbosa Souza  | Eleni          | Zlotkey   |
+| Diego      | Silva Pinto    | Eleni          | Zlotkey   |
+| Sarah      | Alves Rocha    | Eleni          | Zlotkey   |
+| Lucas      | Almeida Castro | Eleni          | Zlotkey   |
+| Nick       | Hooper         | Eleni          | Zlotkey   |
+| Donna      | Steiner        | Michael        | Hartstein |
+| George     | Bell           | Kevin          | Mourgos   |
+| Lisa       | TAYLOR         | Michael        | Hartstein |
+| Michael    | Stocks         | Michael        | Hartstein |
+| Tiffany    | Heiden         | Kevin          | Mourgos   |
+| Chen       | Li             | Alexander      | Hunold    |
+| Alain      | Fontaine       | Alexander      | Hunold    |
+| Matthias   | Reinhard       | Shelley        | Higgins   |
+| Katia      | Hernandez      | Neena          | Kochhar   |
+| Guido      | Ricci          | Neena          | Kochhar   |
+| Mizuto     | Saikawa        | Neena          | Kochhar   |
+| Nabil      | Safwah         | Michael        | Hartstein |
+| Jelena     | Duric          | Shelley        | Higgins   |
+| Jennifer   | Loermans       | Shelley        | Higgins   |
+| Alice      | Newton         | Michael        | Hartstein |
++------------+----------------+----------------+-----------+
+40 rows in set (0.00 sec)
+
+mysql> note
+    -> ^C
+mysql> Terminal close -- exit!

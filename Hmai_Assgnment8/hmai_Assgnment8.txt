@@ -1,0 +1,862 @@
+mysql> source C:\Users\vampb\OneDrive\Desktop\hmai_Assgnment8.sql
+Database changed
+--------------
+-- Query No.1 --
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT e.last_name, e.salary, e.dept_id, d_max.max_salary
+FROM EMPLOYEES e
+JOIN (
+    SELECT dept_id, MAX(salary) AS max_salary
+    FROM EMPLOYEES
+    GROUP BY dept_id
+) d_max ON e.dept_id = d_max.dept_id
+ORDER BY e.dept_id, e.last_name asc
+--------------
+
++----------------+----------+---------+------------+
+| last_name      | salary   | dept_id | max_salary |
++----------------+----------+---------+------------+
+| Hernandez      |  4300.00 |      10 |    4400.00 |
+| Ricci          |  4100.00 |      10 |    4400.00 |
+| Saikawa        |  4400.00 |      10 |    4400.00 |
+| Whalen         |  4400.00 |      10 |    4400.00 |
+| Fay            |  3900.00 |      20 |   13000.00 |
+| Hartstein      | 13000.00 |      20 |   13000.00 |
+| Newton         |  4900.00 |      20 |   13000.00 |
+| Safwah         |  5000.00 |      20 |   13000.00 |
+| Steiner        |  8600.00 |      20 |   13000.00 |
+| Stocks         |  3700.00 |      20 |   13000.00 |
+| TAYLOR         |  4000.00 |      20 |   13000.00 |
+| Bell           |  3500.00 |      50 |    5800.00 |
+| Davies         |  3100.00 |      50 |    5800.00 |
+| Heiden         |  2600.00 |      50 |    5800.00 |
+| Matos          |  2600.00 |      50 |    5800.00 |
+| Mourgos        |  5800.00 |      50 |    5800.00 |
+| Rajs           |  3500.00 |      50 |    5800.00 |
+| Vargas         |  2500.00 |      50 |    5800.00 |
+| Ernst          |  6000.00 |      60 |    9000.00 |
+| Fontaine       |  7800.00 |      60 |    9000.00 |
+| Hunold         |  9000.00 |      60 |    9000.00 |
+| Li             |  8000.00 |      60 |    9000.00 |
+| Lorentz        |  4200.00 |      60 |    9000.00 |
+| Abel           | 11000.00 |      80 |   11000.00 |
+| Hooper         |  9600.00 |      80 |   11000.00 |
+| Taylor         |  8600.00 |      80 |   11000.00 |
+| Zlotkey        | 10500.00 |      80 |   11000.00 |
+| Almeida Castro |  7300.00 |      85 |    9500.00 |
+| Alves Rocha    |  7300.00 |      85 |    9500.00 |
+| Barbosa Souza  |  9500.00 |      85 |    9500.00 |
+| Silva Pinto    |  7500.00 |      85 |    9500.00 |
+| De Haan        | 17000.00 |      90 |   24000.00 |
+| King           | 24000.00 |      90 |   24000.00 |
+| Kochhar        | 17000.00 |      90 |   24000.00 |
+| Duric          |  5400.00 |     110 |   12000.00 |
+| Gietz          |  8300.00 |     110 |   12000.00 |
+| Higgins        | 12000.00 |     110 |   12000.00 |
+| Loermans       |  5200.00 |     110 |   12000.00 |
+| Reinhard       |  8100.00 |     110 |   12000.00 |
++----------------+----------+---------+------------+
+39 rows in set (0.00 sec)
+
+--------------
+-- Query No. 2 --
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+/*CREATE VIEW MAJOR_CUSTOMER AS
+SELECT cust_id, first_name, last_name, credit_limit
+FROM CUSTOMERS
+WHERE credit_limit >= 100;*/
+SELECT * FROM MAJOR_CUSTOMER
+--------------
+
++---------+------------+------------+--------------+
+| cust_id | first_name | last_name  | credit_limit |
++---------+------------+------------+--------------+
+|  400300 | Arnold     | McGold     |         6000 |
+|  400801 | Geo        | Washington |          750 |
+|  401250 | Samuel     | Morse      |          750 |
+|  401890 | William    | Northrep   |         1750 |
+|  402100 | William    | Morise     |          750 |
+|  402110 | John       | Coltrane   |          750 |
+|  402120 | Tyner      | McCoy      |          750 |
+|  403000 | Sally      | Williams   |         6000 |
+|  403010 | Elisha     | Otis       |         6000 |
+|  403050 | Alexis     | Hamilton   |         6000 |
+|  403100 | James      | Stevenson  |         6000 |
+|  403500 | JAMES      | Stevenson  |         6000 |
+|  403750 | Mary       | O'Leary    |         6000 |
+|  403760 | Mary       | O'Leary    |         6000 |
+|  404000 | Frederick  | Olmsted    |         3500 |
+|  404100 | D. K.      | Button     |         3500 |
+|  404150 | Tom        | Dancer     |         3500 |
+|  404180 | Danielle   | Shay       |         3500 |
+|  404890 | Florence   | Kelley     |         1750 |
+|  404900 | Al         | Williams   |         1750 |
+|  404950 | William    | Morris     |         1750 |
+|  408770 | Clem       | Clay       |         7500 |
+|  409010 | William    | Morris     |         1750 |
+|  409020 | William    | Max        |         1750 |
+|  409030 | Barry      | Mazur      |         6000 |
+|  409150 | Joan       | Martin     |         1750 |
+|  409160 | Jane       | Martin     |         1750 |
+|  409190 | NULL       | Prince     |         1750 |
+|  900300 | Arnold     | McGold     |         6000 |
+|  903000 | Arnold     | McGold     |         6000 |
+|  915001 | Abigail    | Adams      |         1750 |
++---------+------------+------------+--------------+
+31 rows in set (0.00 sec)
+
+--------------
+-- Query No. 3 --
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+/*CREATE VIEW ITEM_ORDERED AS
+SELECT
+    p.prod_id,
+    p.prod_desc,
+    p.prod_list_price,
+    o.ord_id,
+    o.ord_date,
+    od.quantity_ordered,
+    od.quoted_price
+FROM
+    PRODUCTS p
+JOIN ORDER_DETAILS od ON p.prod_id = od.prod_id
+JOIN ORDERS o ON od.ord_id = o.ord_id;
+*/
+SELECT * FROM ITEM_ORDERED
+ORDER BY prod_id ASC
+--------------
+
++---------+------------------------------------------------+-----------------+--------+---------------------+------------------+--------------+
+| prod_id | prod_desc                                      | prod_list_price | ord_id | ord_date            | quantity_ordered | quoted_price |
++---------+------------------------------------------------+-----------------+--------+---------------------+------------------+--------------+
+|    1000 | Seven speed BnD hand mixer, black              |          125.00 |    115 | 2013-11-08 00:00:00 |                2 |       100.00 |
+|    1000 | Seven speed BnD hand mixer, black              |          125.00 |    303 | 2014-06-10 00:00:00 |                1 |       125.00 |
+|    1000 | Seven speed BnD hand mixer, black              |          125.00 |    313 | 2014-06-07 00:00:00 |                1 |       125.00 |
+|    1000 | Seven speed BnD hand mixer, black              |          125.00 |    608 | 2013-09-26 00:00:00 |                1 |       100.00 |
+|    1000 | Seven speed BnD hand mixer, black              |          125.00 |    808 | 2014-01-26 00:00:00 |                1 |       100.00 |
+|    1010 | Set of 12 barbells 15 pounds                   |          150.00 |    105 | 2013-10-01 00:00:00 |                5 |       150.00 |
+|    1010 | Set of 12 barbells 15 pounds                   |          150.00 |    120 | 2014-01-02 00:00:00 |               10 |       175.00 |
+|    1010 | Set of 12 barbells 15 pounds                   |          150.00 |    121 | 2014-01-03 00:00:00 |               20 |       175.00 |
+|    1010 | Set of 12 barbells 15 pounds                   |          150.00 |    390 | 2014-06-04 00:00:00 |                8 |       175.00 |
+|    1010 | Set of 12 barbells 15 pounds                   |          150.00 |    395 | 2014-06-04 00:00:00 |               15 |       195.00 |
+|    1010 | Set of 12 barbells 15 pounds                   |          150.00 |    405 | 2013-11-19 00:00:00 |                1 |       150.00 |
+|    1010 | Set of 12 barbells 15 pounds                   |          150.00 |    528 | 2014-05-01 00:00:00 |               15 |       150.00 |
+|    1010 | Set of 12 barbells 15 pounds                   |          150.00 |    550 | 2014-08-02 00:00:00 |               10 |       175.00 |
+|    1010 | Set of 12 barbells 15 pounds                   |          150.00 |    551 | 2014-08-03 00:00:00 |               20 |       175.00 |
+|    1010 | Set of 12 barbells 15 pounds                   |          150.00 |    605 | 2013-09-05 00:00:00 |                1 |       125.00 |
+|    1010 | Set of 12 barbells 15 pounds                   |          150.00 |    609 | 2013-09-27 00:00:00 |               20 |       175.00 |
+|    1010 | Set of 12 barbells 15 pounds                   |          150.00 |    808 | 2014-01-26 00:00:00 |                1 |       125.00 |
+|    1020 | Cork-backed dartboard with hanger              |           12.95 |    105 | 2013-10-01 00:00:00 |               12 |        12.95 |
+|    1020 | Cork-backed dartboard with hanger              |           12.95 |    405 | 2013-11-19 00:00:00 |                1 |        12.95 |
+|    1020 | Cork-backed dartboard with hanger              |           12.95 |    414 | 2014-07-20 00:00:00 |               13 |        12.95 |
+|    1020 | Cork-backed dartboard with hanger              |           12.95 |    516 | 2014-02-02 00:00:00 |                1 |        12.95 |
+|    1020 | Cork-backed dartboard with hanger              |           12.95 |    519 | 2014-04-04 00:00:00 |                5 |        12.95 |
+|    1020 | Cork-backed dartboard with hanger              |           12.95 |    520 | 2014-04-04 00:00:00 |                3 |        12.95 |
+|    1020 | Cork-backed dartboard with hanger              |           12.95 |    529 | 2014-05-12 00:00:00 |               10 |        12.95 |
+|    1020 | Cork-backed dartboard with hanger              |           12.95 |    605 | 2013-09-05 00:00:00 |                1 |        12.95 |
+|    1020 | Cork-backed dartboard with hanger              |           12.95 |    608 | 2013-09-26 00:00:00 |                4 |        12.95 |
+|    1020 | Cork-backed dartboard with hanger              |           12.95 |    716 | 2014-02-06 00:00:00 |                1 |        12.95 |
+|    1020 | Cork-backed dartboard with hanger              |           12.95 |    808 | 2014-01-26 00:00:00 |                1 |        12.95 |
+|    1030 | Basketball                                     |           29.95 |    105 | 2013-10-01 00:00:00 |               12 |        25.00 |
+|    1030 | Basketball                                     |           29.95 |    117 | 2013-11-28 00:00:00 |                1 |        27.00 |
+|    1030 | Basketball                                     |           29.95 |    405 | 2013-11-19 00:00:00 |                1 |        29.95 |
+|    1030 | Basketball                                     |           29.95 |    528 | 2014-05-01 00:00:00 |               16 |        20.50 |
+|    1040 | Super Flyer Treadmill                          |          349.95 |    121 | 2014-01-03 00:00:00 |                1 |       300.25 |
+|    1040 | Super Flyer Treadmill                          |          349.95 |    302 | 2014-06-04 00:00:00 |                1 |       349.95 |
+|    1040 | Super Flyer Treadmill                          |          349.95 |    312 | 2014-06-07 00:00:00 |               10 |       300.00 |
+|    1040 | Super Flyer Treadmill                          |          349.95 |    405 | 2013-11-19 00:00:00 |                1 |       349.95 |
+|    1040 | Super Flyer Treadmill                          |          349.95 |    535 | 2014-05-12 00:00:00 |                1 |       300.00 |
+|    1040 | Super Flyer Treadmill                          |          349.95 |    536 | 2014-05-12 00:00:00 |                1 |       300.00 |
+|    1040 | Super Flyer Treadmill                          |          349.95 |    550 | 2014-08-02 00:00:00 |                1 |       300.25 |
+|    1040 | Super Flyer Treadmill                          |          349.95 |    609 | 2013-09-27 00:00:00 |               20 |       300.25 |
+|    1050 | Deluxe Stationary bike                         |          269.95 |    312 | 2014-06-07 00:00:00 |               10 |       250.00 |
+|    1050 | Deluxe Stationary bike                         |          269.95 |    405 | 2013-11-19 00:00:00 |                1 |       269.95 |
+|    1050 | Deluxe Stationary bike                         |          269.95 |    535 | 2014-05-12 00:00:00 |                1 |       225.00 |
+|    1050 | Deluxe Stationary bike                         |          269.95 |    536 | 2014-05-12 00:00:00 |                1 |       225.00 |
+|    1060 | Deluxe Mountain bike                           |          255.95 |    106 | 2013-10-01 00:00:00 |                1 |       255.95 |
+|    1060 | Deluxe Mountain bike                           |          255.95 |    128 | 2013-12-15 00:00:00 |                2 |       255.95 |
+|    1060 | Deluxe Mountain bike                           |          255.95 |    312 | 2014-06-07 00:00:00 |               10 |       140.50 |
+|    1060 | Deluxe Mountain bike                           |          255.95 |    312 | 2014-06-07 00:00:00 |               20 |       125.00 |
+|    1060 | Deluxe Mountain bike                           |          255.95 |    405 | 2013-11-19 00:00:00 |                1 |       255.95 |
+|    1060 | Deluxe Mountain bike                           |          255.95 |    411 | 2014-07-01 00:00:00 |                2 |       255.95 |
+|    1060 | Deluxe Mountain bike                           |          255.95 |    505 | 2014-01-12 00:00:00 |                1 |       255.95 |
+|    1060 | Deluxe Mountain bike                           |          255.95 |    511 | 2014-02-01 00:00:00 |                1 |       255.95 |
+|    1060 | Deluxe Mountain bike                           |          255.95 |    605 | 2013-09-05 00:00:00 |                5 |       125.00 |
+|    1060 | Deluxe Mountain bike                           |          255.95 |    805 | 2014-01-05 00:00:00 |                5 |       125.00 |
+|    1070 | Steam and dry iron SunShine, Yellow            |           25.50 |    119 | 2013-11-28 00:00:00 |               10 |        22.50 |
+|    1070 | Steam and dry iron SunShine, Yellow            |           25.50 |    122 | 2014-01-23 00:00:00 |                1 |        25.00 |
+|    1070 | Steam and dry iron SunShine, Yellow            |           25.50 |    122 | 2014-01-23 00:00:00 |                2 |        15.00 |
+|    1070 | Steam and dry iron SunShine, Yellow            |           25.50 |    224 | 2013-08-07 00:00:00 |               10 |        15.00 |
+|    1070 | Steam and dry iron SunShine, Yellow            |           25.50 |    524 | 2014-04-07 00:00:00 |                2 |        15.00 |
+|    1070 | Steam and dry iron SunShine, Yellow            |           25.50 |    528 | 2014-05-01 00:00:00 |                2 |        25.50 |
+|    1070 | Steam and dry iron SunShine, Yellow            |           25.50 |    607 | 2013-09-15 00:00:00 |               10 |        22.25 |
+|    1070 | Steam and dry iron SunShine, Yellow            |           25.50 |    807 | 2014-01-15 00:00:00 |               10 |        22.25 |
+|    1071 | Steam and dry iron SunShine, Blue              |           25.50 |    122 | 2014-01-23 00:00:00 |                1 |        25.00 |
+|    1071 | Steam and dry iron SunShine, Blue              |           25.50 |    408 | 2013-11-20 00:00:00 |                1 |        15.00 |
+|    1071 | Steam and dry iron SunShine, Blue              |           25.50 |    411 | 2014-07-01 00:00:00 |                2 |        25.00 |
+|    1071 | Steam and dry iron SunShine, Blue              |           25.50 |    510 | 2014-02-01 00:00:00 |                2 |        25.00 |
+|    1072 | Steam and dry iron SunShine, Red               |           25.50 |    122 | 2014-01-23 00:00:00 |                1 |        25.00 |
+|    1072 | Steam and dry iron SunShine, Red               |           25.50 |    411 | 2014-07-01 00:00:00 |                2 |        24.25 |
+|    1072 | Steam and dry iron SunShine, Red               |           25.50 |    510 | 2014-02-01 00:00:00 |                1 |        24.25 |
+|    1080 | Cornpopper 12 quart automatic shutoff          |           25.00 |    108 | 2013-10-02 00:00:00 |                1 |        22.50 |
+|    1080 | Cornpopper 12 quart automatic shutoff          |           25.00 |    113 | 2013-11-08 00:00:00 |                1 |        22.50 |
+|    1080 | Cornpopper 12 quart automatic shutoff          |           25.00 |    115 | 2013-11-08 00:00:00 |                1 |        25.00 |
+|    1080 | Cornpopper 12 quart automatic shutoff          |           25.00 |    127 | 2013-12-15 00:00:00 |                1 |        25.00 |
+|    1080 | Cornpopper 12 quart automatic shutoff          |           25.00 |    505 | 2014-01-12 00:00:00 |                2 |        22.50 |
+|    1080 | Cornpopper 12 quart automatic shutoff          |           25.00 |    522 | 2014-04-05 00:00:00 |                2 |        22.50 |
+|    1080 | Cornpopper 12 quart automatic shutoff          |           25.00 |    540 | 2014-06-02 00:00:00 |                2 |        22.50 |
+|    1080 | Cornpopper 12 quart automatic shutoff          |           25.00 |    605 | 2013-09-05 00:00:00 |               12 |        25.00 |
+|    1080 | Cornpopper 12 quart automatic shutoff          |           25.00 |    605 | 2013-09-05 00:00:00 |               12 |        25.00 |
+|    1080 | Cornpopper 12 quart automatic shutoff          |           25.00 |    609 | 2013-09-27 00:00:00 |                5 |        25.00 |
+|    1080 | Cornpopper 12 quart automatic shutoff          |           25.00 |    611 | 2013-09-30 00:00:00 |               12 |        25.00 |
+|    1080 | Cornpopper 12 quart automatic shutoff          |           25.00 |    805 | 2014-01-05 00:00:00 |               12 |        25.00 |
+|    1080 | Cornpopper 12 quart automatic shutoff          |           25.00 |    809 | 2014-01-27 00:00:00 |                5 |        25.00 |
+|    1080 | Cornpopper 12 quart automatic shutoff          |           25.00 |    811 | 2014-01-31 00:00:00 |               12 |        25.00 |
+|    1080 | Cornpopper 12 quart automatic shutoff          |           25.00 |    811 | 2014-01-31 00:00:00 |               12 |        25.00 |
+|    1090 | Gas grill                                      |          149.99 |    110 | 2013-10-12 00:00:00 |                1 |       149.99 |
+|    1090 | Gas grill                                      |          149.99 |    130 | 2013-12-30 00:00:00 |                1 |       145.00 |
+|    1090 | Gas grill                                      |          149.99 |    224 | 2013-08-07 00:00:00 |               10 |       145.99 |
+|    1090 | Gas grill                                      |          149.99 |    507 | 2014-02-01 00:00:00 |                1 |       145.99 |
+|    1090 | Gas grill                                      |          149.99 |    509 | 2014-02-12 00:00:00 |                5 |       149.99 |
+|    1090 | Gas grill                                      |          149.99 |    524 | 2014-04-07 00:00:00 |                1 |       145.99 |
+|    1100 | Twelve-speed Blender                           |           49.99 |    115 | 2013-11-08 00:00:00 |                4 |        45.00 |
+|    1100 | Twelve-speed Blender                           |           49.99 |    126 | 2013-12-15 00:00:00 |                1 |        49.99 |
+|    1100 | Twelve-speed Blender                           |           49.99 |    127 | 2013-12-15 00:00:00 |                1 |        49.99 |
+|    1100 | Twelve-speed Blender                           |           49.99 |    301 | 2014-06-04 00:00:00 |                1 |       205.00 |
+|    1110 | Electric Pancake griddle                       |           49.99 |    107 | 2013-10-02 00:00:00 |                1 |        49.99 |
+|    1110 | Electric Pancake griddle                       |           49.99 |    112 | 2013-11-08 00:00:00 |                2 |        49.99 |
+|    1110 | Electric Pancake griddle                       |           49.99 |    127 | 2013-12-15 00:00:00 |                1 |        49.99 |
+|    1110 | Electric Pancake griddle                       |           49.99 |    413 | 2014-07-07 00:00:00 |               10 |        49.99 |
+|    1110 | Electric Pancake griddle                       |           49.99 |    505 | 2014-01-12 00:00:00 |                1 |        49.99 |
+|    1110 | Electric Pancake griddle                       |           49.99 |    515 | 2014-02-02 00:00:00 |                1 |        49.99 |
+|    1110 | Electric Pancake griddle                       |           49.99 |    519 | 2014-04-04 00:00:00 |                1 |        49.99 |
+|    1110 | Electric Pancake griddle                       |           49.99 |    540 | 2014-06-02 00:00:00 |                1 |        49.99 |
+|    1110 | Electric Pancake griddle                       |           49.99 |    715 | 2014-04-05 00:00:00 |                1 |        49.99 |
+|    1120 | Full-sized Washer                              |          549.99 |    115 | 2013-11-08 00:00:00 |                4 |       475.00 |
+|    1120 | Full-sized Washer                              |          549.99 |    130 | 2013-12-30 00:00:00 |                1 |       500.00 |
+|    1120 | Full-sized Washer                              |          549.99 |    306 | 2014-06-04 00:00:00 |                1 |       500.00 |
+|    1120 | Full-sized Washer                              |          549.99 |    307 | 2014-06-04 00:00:00 |                5 |       450.00 |
+|    1120 | Full-sized Washer                              |          549.99 |    378 | 2014-06-14 00:00:00 |                5 |       450.00 |
+|    1125 | Low Energy Dryer                               |          500.00 |    118 | 2013-11-28 00:00:00 |                4 |       475.00 |
+|    1125 | Low Energy Dryer                               |          500.00 |    130 | 2013-12-30 00:00:00 |                1 |       500.00 |
+|    1125 | Low Energy Dryer                               |          500.00 |    218 | 2013-08-08 00:00:00 |                5 |       500.00 |
+|    1125 | Low Energy Dryer                               |          500.00 |    306 | 2014-06-04 00:00:00 |                1 |       500.00 |
+|    1125 | Low Energy Dryer                               |          500.00 |    307 | 2014-06-04 00:00:00 |                5 |       450.00 |
+|    1125 | Low Energy Dryer                               |          500.00 |    378 | 2014-06-14 00:00:00 |                5 |       450.00 |
+|    1125 | Low Energy Dryer                               |          500.00 |    415 | 2014-07-23 00:00:00 |                5 |       500.00 |
+|    1125 | Low Energy Dryer                               |          500.00 |    518 | 2014-02-03 00:00:00 |                1 |       500.00 |
+|    1125 | Low Energy Dryer                               |          500.00 |    718 | 2014-04-08 00:00:00 |                1 |       500.00 |
+|    1130 | Mini freezer, sized for the office             |          149.99 |    109 | 2013-10-12 00:00:00 |                1 |       149.99 |
+|    1130 | Mini freezer, sized for the office             |          149.99 |    110 | 2013-10-12 00:00:00 |                1 |       149.99 |
+|    1130 | Mini freezer, sized for the office             |          149.99 |    114 | 2013-11-08 00:00:00 |                5 |       125.00 |
+|    1130 | Mini freezer, sized for the office             |          149.99 |    223 | 2013-08-05 00:00:00 |                1 |       148.99 |
+|    1130 | Mini freezer, sized for the office             |          149.99 |    412 | 2014-07-01 00:00:00 |                1 |       149.99 |
+|    1130 | Mini freezer, sized for the office             |          149.99 |    503 | 2014-01-04 00:00:00 |                1 |       149.99 |
+|    1130 | Mini freezer, sized for the office             |          149.99 |    504 | 2014-01-11 00:00:00 |                1 |       149.99 |
+|    1130 | Mini freezer, sized for the office             |          149.99 |    509 | 2014-02-12 00:00:00 |                2 |       149.99 |
+|    1130 | Mini freezer, sized for the office             |          149.99 |    511 | 2014-02-01 00:00:00 |                1 |       149.99 |
+|    1130 | Mini freezer, sized for the office             |          149.99 |    523 | 2014-04-05 00:00:00 |                1 |       149.99 |
+|    1130 | Mini freezer, sized for the office             |          149.99 |    529 | 2014-05-12 00:00:00 |                1 |       149.99 |
+|    1130 | Mini freezer, sized for the office             |          149.99 |    605 | 2013-09-05 00:00:00 |               12 |       112.95 |
+|    1130 | Mini freezer, sized for the office             |          149.99 |    805 | 2014-01-05 00:00:00 |               12 |       112.95 |
+|    1140 | Bird cage- simple; wire frame two feeder trays |           14.99 |    302 | 2014-06-04 00:00:00 |               10 |        12.00 |
+|    1141 | Bird cage- deluxe;floor model, with fly space  |           99.99 |    111 | 2013-11-01 00:00:00 |                1 |        75.00 |
+|    1141 | Bird cage- deluxe;floor model, with fly space  |           99.99 |    117 | 2013-11-28 00:00:00 |                4 |        75.00 |
+|    1141 | Bird cage- deluxe;floor model, with fly space  |           99.99 |    129 | 2013-12-15 00:00:00 |                3 |        99.99 |
+|    1141 | Bird cage- deluxe;floor model, with fly space  |           99.99 |    218 | 2013-08-08 00:00:00 |                3 |        75.99 |
+|    1141 | Bird cage- deluxe;floor model, with fly space  |           99.99 |    223 | 2013-08-05 00:00:00 |                3 |        75.99 |
+|    1141 | Bird cage- deluxe;floor model, with fly space  |           99.99 |    227 | 2013-08-01 00:00:00 |                3 |        75.99 |
+|    1141 | Bird cage- deluxe;floor model, with fly space  |           99.99 |    415 | 2014-07-23 00:00:00 |                5 |        75.99 |
+|    1141 | Bird cage- deluxe;floor model, with fly space  |           99.99 |    518 | 2014-02-03 00:00:00 |                3 |        75.99 |
+|    1141 | Bird cage- deluxe;floor model, with fly space  |           99.99 |    527 | 2014-05-01 00:00:00 |                3 |        75.99 |
+|    1141 | Bird cage- deluxe;floor model, with fly space  |           99.99 |    718 | 2014-04-08 00:00:00 |                3 |        75.99 |
+|    1150 | Cat exerciser                                  |            4.99 |    111 | 2013-11-01 00:00:00 |               50 |         4.99 |
+|    1150 | Cat exerciser                                  |            4.99 |    117 | 2013-11-28 00:00:00 |                4 |         4.99 |
+|    1150 | Cat exerciser                                  |            4.99 |    223 | 2013-08-05 00:00:00 |               50 |         7.25 |
+|    1150 | Cat exerciser                                  |            4.99 |    227 | 2013-08-01 00:00:00 |               50 |         4.25 |
+|    1150 | Cat exerciser                                  |            4.99 |    527 | 2014-05-01 00:00:00 |               50 |         4.25 |
+|    1151 | Cat pillow, removable cloth cover              |           14.99 |    124 | 2013-12-07 00:00:00 |                1 |        14.99 |
+|    1152 | Cat pillow, removable leather cover            |           55.28 |    125 | 2013-12-09 00:00:00 |                1 |        55.00 |
+|    1152 | Cat pillow, removable leather cover            |           55.28 |    508 | 2014-02-01 00:00:00 |                4 |        55.25 |
+|    1152 | Cat pillow, removable leather cover            |           55.28 |    508 | 2014-02-01 00:00:00 |                6 |        27.15 |
+|    1152 | Cat pillow, removable leather cover            |           55.28 |    540 | 2014-06-02 00:00:00 |                1 |        55.25 |
+|    1152 | Cat pillow, removable leather cover            |           55.28 |    606 | 2013-09-07 00:00:00 |                1 |        55.00 |
+|    1152 | Cat pillow, removable leather cover            |           55.28 |    806 | 2014-01-07 00:00:00 |                1 |        55.00 |
+|    2014 | Bix Beiderbecke - Tiger Rag                    |           15.95 |    218 | 2013-08-08 00:00:00 |                5 |        15.95 |
+|    2014 | Bix Beiderbecke - Tiger Rag                    |           15.95 |    413 | 2014-07-07 00:00:00 |                5 |        15.59 |
+|    2014 | Bix Beiderbecke - Tiger Rag                    |           15.95 |    518 | 2014-02-03 00:00:00 |                1 |        15.59 |
+|    2014 | Bix Beiderbecke - Tiger Rag                    |           15.95 |    525 | 2014-05-09 00:00:00 |                1 |        15.95 |
+|    2014 | Bix Beiderbecke - Tiger Rag                    |           15.95 |    552 | 2014-08-12 00:00:00 |                5 |        15.59 |
+|    2014 | Bix Beiderbecke - Tiger Rag                    |           15.95 |    715 | 2014-04-05 00:00:00 |                1 |        15.59 |
+|    2412 | David Newman - Davey Blue                      |            9.87 |    225 | 2013-08-09 00:00:00 |                0 |         9.87 |
+|    2412 | David Newman - Davey Blue                      |            9.87 |    525 | 2014-05-09 00:00:00 |                1 |         9.87 |
+|    2746 | Charles Mingus - Blues & Politics              |           14.50 |    218 | 2013-08-08 00:00:00 |                1 |        14.50 |
+|    2746 | Charles Mingus - Blues & Politics              |           14.50 |    525 | 2014-05-09 00:00:00 |                1 |        14.50 |
+|    2747 | Charles Mingus - Blues & Roots                 |           14.50 |    520 | 2014-04-04 00:00:00 |                3 |        12.95 |
+|    2947 | Ornette Coleman - Sound Grammer                |           12.45 |    225 | 2013-08-09 00:00:00 |                5 |        12.45 |
+|    2947 | Ornette Coleman - Sound Grammer                |           12.45 |    525 | 2014-05-09 00:00:00 |                1 |        12.45 |
+|    2984 | John Coltrane - Lush Life                      |           15.87 |    413 | 2014-07-07 00:00:00 |                5 |        15.87 |
+|    2984 | John Coltrane - Lush Life                      |           15.87 |    518 | 2014-02-03 00:00:00 |                1 |        15.87 |
+|    2984 | John Coltrane - Lush Life                      |           15.87 |    552 | 2014-08-12 00:00:00 |                5 |        15.87 |
+|    2984 | John Coltrane - Lush Life                      |           15.87 |    715 | 2014-04-05 00:00:00 |                1 |        15.87 |
+|    4576 | Primo brand of catnip for your favorite cat    |           29.95 |    324 | 2014-06-11 00:00:00 |               20 |        29.95 |
+|    4577 | Leather cat leash with harness                 |           29.95 |    401 | 2013-10-15 00:00:00 |                3 |        29.95 |
+|    4577 | Leather cat leash with harness                 |           29.95 |    402 | 2013-10-18 00:00:00 |                3 |        29.95 |
+|    4577 | Leather cat leash with harness                 |           29.95 |    610 | 2013-09-27 00:00:00 |                2 |        29.95 |
+|    4577 | Leather cat leash with harness                 |           29.95 |    810 | 2014-01-27 00:00:00 |                2 |        29.95 |
+|    5002 | 16 oz Jacketed Graphite Ball-peen hammer       |           23.00 |    400 | 2013-10-15 00:00:00 |                5 |        23.00 |
+|    5002 | 16 oz Jacketed Graphite Ball-peen hammer       |           23.00 |    401 | 2013-10-15 00:00:00 |                3 |        23.00 |
+|    5002 | 16 oz Jacketed Graphite Ball-peen hammer       |           23.00 |    402 | 2013-10-18 00:00:00 |                3 |        23.00 |
+|    5004 | 10 oz Steel Head Dead Blow hammer              |           15.00 |    400 | 2013-10-15 00:00:00 |                5 |        15.00 |
+|    5005 | Steel Shingler hammerhammer                    |           45.00 |    400 | 2013-10-15 00:00:00 |                5 |        45.00 |
+|    5005 | Steel Shingler hammerhammer                    |           45.00 |    407 | 2013-11-15 00:00:00 |                1 |        42.15 |
+|    5005 | Steel Shingler hammerhammer                    |           45.00 |    407 | 2013-11-15 00:00:00 |                1 |        42.50 |
+|    5008 | 22 oz Graphite checkered face framing hammer   |           12.50 |    400 | 2013-10-15 00:00:00 |                5 |        10.00 |
+|    5008 | 22 oz Graphite checkered face framing hammer   |           12.50 |    407 | 2013-11-15 00:00:00 |                1 |         8.00 |
++---------+------------------------------------------------+-----------------+--------+---------------------+------------------+--------------+
+184 rows in set (0.00 sec)
+
+--------------
+-- Query No. 4 --
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT
+    p.prod_id,
+    p.prod_desc,
+    o.ord_id,
+    od.quoted_price
+FROM
+    PRODUCTS p
+JOIN ORDER_DETAILS od ON p.prod_id = od.prod_id
+JOIN ORDERS o ON od.ord_id = o.ord_id
+WHERE
+    od.quoted_price > 100
+--------------
+
++---------+------------------------------------+--------+--------------+
+| prod_id | prod_desc                          | ord_id | quoted_price |
++---------+------------------------------------+--------+--------------+
+|    1010 | Set of 12 barbells 15 pounds       |    105 |       150.00 |
+|    1060 | Deluxe Mountain bike               |    106 |       255.95 |
+|    1130 | Mini freezer, sized for the office |    109 |       149.99 |
+|    1090 | Gas grill                          |    110 |       149.99 |
+|    1130 | Mini freezer, sized for the office |    110 |       149.99 |
+|    1130 | Mini freezer, sized for the office |    114 |       125.00 |
+|    1120 | Full-sized Washer                  |    115 |       475.00 |
+|    1125 | Low Energy Dryer                   |    118 |       475.00 |
+|    1010 | Set of 12 barbells 15 pounds       |    120 |       175.00 |
+|    1010 | Set of 12 barbells 15 pounds       |    121 |       175.00 |
+|    1040 | Super Flyer Treadmill              |    121 |       300.25 |
+|    1060 | Deluxe Mountain bike               |    128 |       255.95 |
+|    1120 | Full-sized Washer                  |    130 |       500.00 |
+|    1125 | Low Energy Dryer                   |    130 |       500.00 |
+|    1090 | Gas grill                          |    130 |       145.00 |
+|    1125 | Low Energy Dryer                   |    218 |       500.00 |
+|    1130 | Mini freezer, sized for the office |    223 |       148.99 |
+|    1090 | Gas grill                          |    224 |       145.99 |
+|    1100 | Twelve-speed Blender               |    301 |       205.00 |
+|    1040 | Super Flyer Treadmill              |    302 |       349.95 |
+|    1000 | Seven speed BnD hand mixer, black  |    303 |       125.00 |
+|    1120 | Full-sized Washer                  |    306 |       500.00 |
+|    1125 | Low Energy Dryer                   |    306 |       500.00 |
+|    1120 | Full-sized Washer                  |    307 |       450.00 |
+|    1125 | Low Energy Dryer                   |    307 |       450.00 |
+|    1040 | Super Flyer Treadmill              |    312 |       300.00 |
+|    1050 | Deluxe Stationary bike             |    312 |       250.00 |
+|    1060 | Deluxe Mountain bike               |    312 |       140.50 |
+|    1060 | Deluxe Mountain bike               |    312 |       125.00 |
+|    1000 | Seven speed BnD hand mixer, black  |    313 |       125.00 |
+|    1120 | Full-sized Washer                  |    378 |       450.00 |
+|    1125 | Low Energy Dryer                   |    378 |       450.00 |
+|    1010 | Set of 12 barbells 15 pounds       |    390 |       175.00 |
+|    1010 | Set of 12 barbells 15 pounds       |    395 |       195.00 |
+|    1010 | Set of 12 barbells 15 pounds       |    405 |       150.00 |
+|    1040 | Super Flyer Treadmill              |    405 |       349.95 |
+|    1050 | Deluxe Stationary bike             |    405 |       269.95 |
+|    1060 | Deluxe Mountain bike               |    405 |       255.95 |
+|    1060 | Deluxe Mountain bike               |    411 |       255.95 |
+|    1130 | Mini freezer, sized for the office |    412 |       149.99 |
+|    1125 | Low Energy Dryer                   |    415 |       500.00 |
+|    1130 | Mini freezer, sized for the office |    503 |       149.99 |
+|    1130 | Mini freezer, sized for the office |    504 |       149.99 |
+|    1060 | Deluxe Mountain bike               |    505 |       255.95 |
+|    1090 | Gas grill                          |    507 |       145.99 |
+|    1090 | Gas grill                          |    509 |       149.99 |
+|    1130 | Mini freezer, sized for the office |    509 |       149.99 |
+|    1130 | Mini freezer, sized for the office |    511 |       149.99 |
+|    1060 | Deluxe Mountain bike               |    511 |       255.95 |
+|    1125 | Low Energy Dryer                   |    518 |       500.00 |
+|    1130 | Mini freezer, sized for the office |    523 |       149.99 |
+|    1090 | Gas grill                          |    524 |       145.99 |
+|    1010 | Set of 12 barbells 15 pounds       |    528 |       150.00 |
+|    1130 | Mini freezer, sized for the office |    529 |       149.99 |
+|    1040 | Super Flyer Treadmill              |    535 |       300.00 |
+|    1050 | Deluxe Stationary bike             |    535 |       225.00 |
+|    1040 | Super Flyer Treadmill              |    536 |       300.00 |
+|    1050 | Deluxe Stationary bike             |    536 |       225.00 |
+|    1010 | Set of 12 barbells 15 pounds       |    550 |       175.00 |
+|    1040 | Super Flyer Treadmill              |    550 |       300.25 |
+|    1010 | Set of 12 barbells 15 pounds       |    551 |       175.00 |
+|    1130 | Mini freezer, sized for the office |    605 |       112.95 |
+|    1060 | Deluxe Mountain bike               |    605 |       125.00 |
+|    1010 | Set of 12 barbells 15 pounds       |    605 |       125.00 |
+|    1040 | Super Flyer Treadmill              |    609 |       300.25 |
+|    1010 | Set of 12 barbells 15 pounds       |    609 |       175.00 |
+|    1125 | Low Energy Dryer                   |    718 |       500.00 |
+|    1130 | Mini freezer, sized for the office |    805 |       112.95 |
+|    1060 | Deluxe Mountain bike               |    805 |       125.00 |
+|    1010 | Set of 12 barbells 15 pounds       |    808 |       125.00 |
++---------+------------------------------------+--------+--------------+
+70 rows in set (0.00 sec)
+
+--------------
+-- Query No. 5 --
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+/*CREATE TABLE MY_DEPARTMENTS AS
+SELECT *
+FROM DEPARTMENTS;*/
+SELECT * FROM MY_DEPARTMENTS
+--------------
+
++---------+------------------+------------+--------+
+| dept_id | department_name  | manager_id | loc_id |
++---------+------------------+------------+--------+
+|      10 | Administration   |        200 |   2700 |
+|      20 | Marketing        |        201 |   1800 |
+|      50 | Shipping         |        124 |   1500 |
+|      60 | IT               |        103 |   1400 |
+|      80 | Sales - Europe   |        149 |   2100 |
+|      85 | Sales - Americas |        149 |   2100 |
+|      90 | Executive        |        100 |   2700 |
+|     110 | Accounting       |        205 |   2700 |
+|     190 | Contracting      |       NULL |   2700 |
++---------+------------------+------------+--------+
+9 rows in set (0.00 sec)
+
+--------------
+-- Query No. 6 --
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+ /*CREATE VIEW V_SALARIES AS
+SELECT 
+    MAX(e.salary) AS Highestsal,
+    MIN(e.salary) AS Lowestsal,
+    AVG(e.salary) AS Avgsal,
+    d.department_name
+FROM
+    EMPLOYEES e
+JOIN
+    DEPARTMENTS d ON e.dept_id = d.dept_id
+GROUP BY
+    d.department_name;
+ */
+ SELECT * FROM V_SALARIES
+--------------
+
++------------+-----------+--------------+------------------+
+| Highestsal | Lowestsal | Avgsal       | department_name  |
++------------+-----------+--------------+------------------+
+|    4400.00 |   4100.00 |  4300.000000 | Administration   |
+|   13000.00 |   3700.00 |  6157.142857 | Marketing        |
+|    5800.00 |   2500.00 |  3371.428571 | Shipping         |
+|    9000.00 |   4200.00 |  7000.000000 | IT               |
+|   11000.00 |   8600.00 |  9925.000000 | Sales - Europe   |
+|    9500.00 |   7300.00 |  7900.000000 | Sales - Americas |
+|   24000.00 |  17000.00 | 19333.333333 | Executive        |
+|   12000.00 |   5200.00 |  7800.000000 | Accounting       |
++------------+-----------+--------------+------------------+
+8 rows in set (0.00 sec)
+
+--------------
+ 
+-- Query No. 7 -- 
+/*CREATE VIEW PROD_HW_APL AS
+SELECT
+    p.prod_id,
+    p.prod_name,
+    p.prod_list_price
+FROM
+    PRODUCTS p
+JOIN CATEGORIES c ON p.catg_id = c.catg_id
+WHERE
+    c.catg_desc IN ('APPLIANCES', 'HOUSEWARES');
+*/
+SELECT * FROM PROD_HW_APL
+--------------
+
++---------+---------------------+-----------------+
+| prod_id | prod_name           | prod_list_price |
++---------+---------------------+-----------------+
+|    1120 | Washer              |          549.99 |
+|    1125 | Dryer               |          500.00 |
+|    1126 | WasherDryer         |          850.00 |
+|    1130 | Mini Freezer        |          149.99 |
+|    4569 | Mini Dryer          |          349.95 |
+|    1000 | Hand Mixer          |          125.00 |
+|    1070 | Iron                |           25.50 |
+|    1071 | Iron                |           25.50 |
+|    1072 | Iron                |           25.50 |
+|    1080 | Cornpopper          |           25.00 |
+|    1090 | Gas grill           |          149.99 |
+|    1100 | Blender             |           49.99 |
+|    1110 | Pancake griddle     |           49.99 |
+|    1160 | Mixer Deluxe        |          149.99 |
+|    4575 | Electric can opener |           49.95 |
++---------+---------------------+-----------------+
+15 rows in set (0.00 sec)
+
+--------------
+-- Query No. 8 --
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+/*CREATE VIEW CUST_ORDERS AS
+SELECT
+    o.ord_id,
+    o.ord_date,
+    o.cust_id,
+    p.catg_id,
+    od.prod_id
+FROM
+    ORDERS o
+JOIN ORDER_DETAILS od ON o.ord_id = od.ord_id
+JOIN PRODUCTS p ON od.prod_id = p.prod_id; */
+SELECT * FROM CUST_ORDERS
+--------------
+
++--------+---------------------+---------+---------+---------+
+| ord_id | ord_date            | cust_id | catg_id | prod_id |
++--------+---------------------+---------+---------+---------+
+|    105 | 2013-10-01 00:00:00 |  403000 | SPG     |    1030 |
+|    105 | 2013-10-01 00:00:00 |  403000 | SPG     |    1020 |
+|    105 | 2013-10-01 00:00:00 |  403000 | SPG     |    1010 |
+|    106 | 2013-10-01 00:00:00 |  401250 | SPG     |    1060 |
+|    107 | 2013-10-02 00:00:00 |  403050 | HW      |    1110 |
+|    108 | 2013-10-02 00:00:00 |  403000 | HW      |    1080 |
+|    109 | 2013-10-12 00:00:00 |  403000 | APL     |    1130 |
+|    110 | 2013-10-12 00:00:00 |  404950 | HW      |    1090 |
+|    110 | 2013-10-12 00:00:00 |  404950 | APL     |    1130 |
+|    111 | 2013-11-01 00:00:00 |  403000 | PET     |    1150 |
+|    111 | 2013-11-01 00:00:00 |  403000 | PET     |    1141 |
+|    112 | 2013-11-08 00:00:00 |  401890 | HW      |    1110 |
+|    113 | 2013-11-08 00:00:00 |  401250 | HW      |    1080 |
+|    114 | 2013-11-08 00:00:00 |  402100 | APL     |    1130 |
+|    115 | 2013-11-08 00:00:00 |  402100 | HW      |    1000 |
+|    115 | 2013-11-08 00:00:00 |  402100 | APL     |    1120 |
+|    115 | 2013-11-08 00:00:00 |  402100 | HW      |    1080 |
+|    115 | 2013-11-08 00:00:00 |  402100 | HW      |    1100 |
+|    117 | 2013-11-28 00:00:00 |  402100 | PET     |    1150 |
+|    117 | 2013-11-28 00:00:00 |  402100 | PET     |    1141 |
+|    117 | 2013-11-28 00:00:00 |  402100 | SPG     |    1030 |
+|    118 | 2013-11-28 00:00:00 |  403010 | APL     |    1125 |
+|    119 | 2013-11-28 00:00:00 |  401250 | HW      |    1070 |
+|    120 | 2014-01-02 00:00:00 |  903000 | SPG     |    1010 |
+|    121 | 2014-01-03 00:00:00 |  903000 | SPG     |    1010 |
+|    121 | 2014-01-03 00:00:00 |  903000 | SPG     |    1040 |
+|    122 | 2014-01-23 00:00:00 |  409150 | HW      |    1070 |
+|    122 | 2014-01-23 00:00:00 |  409150 | HW      |    1071 |
+|    122 | 2014-01-23 00:00:00 |  409150 | HW      |    1072 |
+|    122 | 2014-01-23 00:00:00 |  409150 | HW      |    1070 |
+|    124 | 2013-12-07 00:00:00 |  409160 | PET     |    1151 |
+|    125 | 2013-12-09 00:00:00 |  409160 | PET     |    1152 |
+|    126 | 2013-12-15 00:00:00 |  409190 | HW      |    1100 |
+|    127 | 2013-12-15 00:00:00 |  915001 | HW      |    1100 |
+|    127 | 2013-12-15 00:00:00 |  915001 | HW      |    1110 |
+|    127 | 2013-12-15 00:00:00 |  915001 | HW      |    1080 |
+|    128 | 2013-12-15 00:00:00 |  409030 | SPG     |    1060 |
+|    129 | 2013-12-15 00:00:00 |  915001 | PET     |    1141 |
+|    130 | 2013-12-30 00:00:00 |  409030 | APL     |    1120 |
+|    130 | 2013-12-30 00:00:00 |  409030 | APL     |    1125 |
+|    130 | 2013-12-30 00:00:00 |  409030 | HW      |    1090 |
+|    218 | 2013-08-08 00:00:00 |  409150 | MUS     |    2014 |
+|    218 | 2013-08-08 00:00:00 |  409150 | APL     |    1125 |
+|    218 | 2013-08-08 00:00:00 |  409150 | PET     |    1141 |
+|    218 | 2013-08-08 00:00:00 |  409150 | MUS     |    2746 |
+|    223 | 2013-08-05 00:00:00 |  409150 | APL     |    1130 |
+|    223 | 2013-08-05 00:00:00 |  409150 | PET     |    1150 |
+|    223 | 2013-08-05 00:00:00 |  409150 | PET     |    1141 |
+|    224 | 2013-08-07 00:00:00 |  409160 | HW      |    1090 |
+|    224 | 2013-08-07 00:00:00 |  409160 | HW      |    1070 |
+|    225 | 2013-08-09 00:00:00 |  409160 | MUS     |    2412 |
+|    225 | 2013-08-09 00:00:00 |  409160 | MUS     |    2947 |
+|    227 | 2013-08-01 00:00:00 |  403050 | PET     |    1150 |
+|    227 | 2013-08-01 00:00:00 |  403050 | PET     |    1141 |
+|    301 | 2014-06-04 00:00:00 |  401250 | HW      |    1100 |
+|    302 | 2014-06-04 00:00:00 |  404000 | PET     |    1140 |
+|    302 | 2014-06-04 00:00:00 |  404000 | SPG     |    1040 |
+|    303 | 2014-06-10 00:00:00 |  404100 | HW      |    1000 |
+|    306 | 2014-06-04 00:00:00 |  903000 | APL     |    1120 |
+|    306 | 2014-06-04 00:00:00 |  903000 | APL     |    1125 |
+|    307 | 2014-06-04 00:00:00 |  900300 | APL     |    1120 |
+|    307 | 2014-06-04 00:00:00 |  900300 | APL     |    1125 |
+|    312 | 2014-06-07 00:00:00 |  903000 | SPG     |    1040 |
+|    312 | 2014-06-07 00:00:00 |  903000 | SPG     |    1050 |
+|    312 | 2014-06-07 00:00:00 |  903000 | SPG     |    1060 |
+|    312 | 2014-06-07 00:00:00 |  903000 | SPG     |    1060 |
+|    313 | 2014-06-07 00:00:00 |  903000 | HW      |    1000 |
+|    324 | 2014-06-11 00:00:00 |  409030 | PET     |    4576 |
+|    378 | 2014-06-14 00:00:00 |  400300 | APL     |    1120 |
+|    378 | 2014-06-14 00:00:00 |  400300 | APL     |    1125 |
+|    390 | 2014-06-04 00:00:00 |  403000 | SPG     |    1010 |
+|    395 | 2014-06-04 00:00:00 |  403000 | SPG     |    1010 |
+|    400 | 2013-10-15 00:00:00 |  403100 | HD      |    5002 |
+|    400 | 2013-10-15 00:00:00 |  403100 | HD      |    5004 |
+|    400 | 2013-10-15 00:00:00 |  403100 | HD      |    5005 |
+|    400 | 2013-10-15 00:00:00 |  403100 | HD      |    5008 |
+|    401 | 2013-10-15 00:00:00 |  403100 | HD      |    5002 |
+|    401 | 2013-10-15 00:00:00 |  403100 | PET     |    4577 |
+|    402 | 2013-10-18 00:00:00 |  403100 | HD      |    5002 |
+|    402 | 2013-10-18 00:00:00 |  403100 | PET     |    4577 |
+|    405 | 2013-11-19 00:00:00 |  408770 | SPG     |    1010 |
+|    405 | 2013-11-19 00:00:00 |  408770 | SPG     |    1020 |
+|    405 | 2013-11-19 00:00:00 |  408770 | SPG     |    1030 |
+|    405 | 2013-11-19 00:00:00 |  408770 | SPG     |    1040 |
+|    405 | 2013-11-19 00:00:00 |  408770 | SPG     |    1050 |
+|    405 | 2013-11-19 00:00:00 |  408770 | SPG     |    1060 |
+|    407 | 2013-11-15 00:00:00 |  403100 | HD      |    5008 |
+|    407 | 2013-11-15 00:00:00 |  403100 | HD      |    5005 |
+|    407 | 2013-11-15 00:00:00 |  403100 | HD      |    5005 |
+|    408 | 2013-11-20 00:00:00 |  404950 | HW      |    1071 |
+|    411 | 2014-07-01 00:00:00 |  404950 | HW      |    1071 |
+|    411 | 2014-07-01 00:00:00 |  404950 | HW      |    1072 |
+|    411 | 2014-07-01 00:00:00 |  404950 | SPG     |    1060 |
+|    412 | 2014-07-01 00:00:00 |  403000 | APL     |    1130 |
+|    413 | 2014-07-07 00:00:00 |  409150 | HW      |    1110 |
+|    413 | 2014-07-07 00:00:00 |  409150 | MUS     |    2014 |
+|    413 | 2014-07-07 00:00:00 |  409150 | MUS     |    2984 |
+|    414 | 2014-07-20 00:00:00 |  409150 | SPG     |    1020 |
+|    415 | 2014-07-23 00:00:00 |  409150 | PET     |    1141 |
+|    415 | 2014-07-23 00:00:00 |  409150 | APL     |    1125 |
+|    503 | 2014-01-04 00:00:00 |  404100 | APL     |    1130 |
+|    504 | 2014-01-11 00:00:00 |  404100 | APL     |    1130 |
+|    505 | 2014-01-12 00:00:00 |  403000 | HW      |    1080 |
+|    505 | 2014-01-12 00:00:00 |  403000 | HW      |    1110 |
+|    505 | 2014-01-12 00:00:00 |  403000 | SPG     |    1060 |
+|    507 | 2014-02-01 00:00:00 |  403050 | HW      |    1090 |
+|    508 | 2014-02-01 00:00:00 |  403000 | PET     |    1152 |
+|    508 | 2014-02-01 00:00:00 |  403000 | PET     |    1152 |
+|    509 | 2014-02-12 00:00:00 |  403000 | HW      |    1090 |
+|    509 | 2014-02-12 00:00:00 |  403000 | APL     |    1130 |
+|    510 | 2014-02-01 00:00:00 |  404950 | HW      |    1071 |
+|    510 | 2014-02-01 00:00:00 |  404950 | HW      |    1072 |
+|    511 | 2014-02-01 00:00:00 |  403000 | APL     |    1130 |
+|    511 | 2014-02-01 00:00:00 |  403000 | SPG     |    1060 |
+|    515 | 2014-02-02 00:00:00 |  409150 | HW      |    1110 |
+|    516 | 2014-02-02 00:00:00 |  409150 | SPG     |    1020 |
+|    518 | 2014-02-03 00:00:00 |  409150 | PET     |    1141 |
+|    518 | 2014-02-03 00:00:00 |  409150 | APL     |    1125 |
+|    518 | 2014-02-03 00:00:00 |  409150 | MUS     |    2014 |
+|    518 | 2014-02-03 00:00:00 |  409150 | MUS     |    2984 |
+|    519 | 2014-04-04 00:00:00 |  401890 | SPG     |    1020 |
+|    519 | 2014-04-04 00:00:00 |  401890 | HW      |    1110 |
+|    520 | 2014-04-04 00:00:00 |  404900 | SPG     |    1020 |
+|    520 | 2014-04-04 00:00:00 |  404900 | MUS     |    2747 |
+|    522 | 2014-04-05 00:00:00 |  409150 | HW      |    1080 |
+|    523 | 2014-04-05 00:00:00 |  409150 | APL     |    1130 |
+|    524 | 2014-04-07 00:00:00 |  409160 | HW      |    1090 |
+|    524 | 2014-04-07 00:00:00 |  409160 | HW      |    1070 |
+|    525 | 2014-05-09 00:00:00 |  409160 | MUS     |    2412 |
+|    525 | 2014-05-09 00:00:00 |  409160 | MUS     |    2947 |
+|    525 | 2014-05-09 00:00:00 |  409160 | MUS     |    2014 |
+|    525 | 2014-05-09 00:00:00 |  409160 | MUS     |    2746 |
+|    527 | 2014-05-01 00:00:00 |  403050 | PET     |    1150 |
+|    527 | 2014-05-01 00:00:00 |  403050 | PET     |    1141 |
+|    528 | 2014-05-01 00:00:00 |  403000 | HW      |    1070 |
+|    528 | 2014-05-01 00:00:00 |  403000 | SPG     |    1030 |
+|    528 | 2014-05-01 00:00:00 |  403000 | SPG     |    1010 |
+|    529 | 2014-05-12 00:00:00 |  403000 | APL     |    1130 |
+|    529 | 2014-05-12 00:00:00 |  403000 | SPG     |    1020 |
+|    535 | 2014-05-12 00:00:00 |  404950 | SPG     |    1040 |
+|    535 | 2014-05-12 00:00:00 |  404950 | SPG     |    1050 |
+|    536 | 2014-05-12 00:00:00 |  403000 | SPG     |    1040 |
+|    536 | 2014-05-12 00:00:00 |  403000 | SPG     |    1050 |
+|    540 | 2014-06-02 00:00:00 |  404950 | HW      |    1080 |
+|    540 | 2014-06-02 00:00:00 |  404950 | HW      |    1110 |
+|    540 | 2014-06-02 00:00:00 |  404950 | PET     |    1152 |
+|    550 | 2014-08-02 00:00:00 |  903000 | SPG     |    1010 |
+|    550 | 2014-08-02 00:00:00 |  903000 | SPG     |    1040 |
+|    551 | 2014-08-03 00:00:00 |  903000 | SPG     |    1010 |
+|    552 | 2014-08-12 00:00:00 |  401250 | MUS     |    2984 |
+|    552 | 2014-08-12 00:00:00 |  401250 | MUS     |    2014 |
+|    605 | 2013-09-05 00:00:00 |  404100 | HW      |    1080 |
+|    605 | 2013-09-05 00:00:00 |  404100 | APL     |    1130 |
+|    605 | 2013-09-05 00:00:00 |  404100 | SPG     |    1060 |
+|    605 | 2013-09-05 00:00:00 |  404100 | HW      |    1080 |
+|    605 | 2013-09-05 00:00:00 |  404100 | SPG     |    1010 |
+|    605 | 2013-09-05 00:00:00 |  404100 | SPG     |    1020 |
+|    606 | 2013-09-07 00:00:00 |  409160 | PET     |    1152 |
+|    607 | 2013-09-15 00:00:00 |  409160 | HW      |    1070 |
+|    608 | 2013-09-26 00:00:00 |  403000 | HW      |    1000 |
+|    608 | 2013-09-26 00:00:00 |  403000 | SPG     |    1020 |
+|    609 | 2013-09-27 00:00:00 |  900300 | HW      |    1080 |
+|    609 | 2013-09-27 00:00:00 |  900300 | SPG     |    1040 |
+|    609 | 2013-09-27 00:00:00 |  900300 | SPG     |    1010 |
+|    610 | 2013-09-27 00:00:00 |  903000 | PET     |    4577 |
+|    611 | 2013-09-30 00:00:00 |  403000 | HW      |    1080 |
+|    715 | 2014-04-05 00:00:00 |  409150 | HW      |    1110 |
+|    715 | 2014-04-05 00:00:00 |  409150 | MUS     |    2014 |
+|    715 | 2014-04-05 00:00:00 |  409150 | MUS     |    2984 |
+|    716 | 2014-02-06 00:00:00 |  409150 | SPG     |    1020 |
+|    718 | 2014-04-08 00:00:00 |  409150 | PET     |    1141 |
+|    718 | 2014-04-08 00:00:00 |  409150 | APL     |    1125 |
+|    805 | 2014-01-05 00:00:00 |  404100 | HW      |    1080 |
+|    805 | 2014-01-05 00:00:00 |  404100 | APL     |    1130 |
+|    805 | 2014-01-05 00:00:00 |  404100 | SPG     |    1060 |
+|    806 | 2014-01-07 00:00:00 |  409160 | PET     |    1152 |
+|    807 | 2014-01-15 00:00:00 |  409160 | HW      |    1070 |
+|    808 | 2014-01-26 00:00:00 |  403000 | HW      |    1000 |
+|    808 | 2014-01-26 00:00:00 |  403000 | SPG     |    1010 |
+|    808 | 2014-01-26 00:00:00 |  403000 | SPG     |    1020 |
+|    809 | 2014-01-27 00:00:00 |  900300 | HW      |    1080 |
+|    810 | 2014-01-27 00:00:00 |  903000 | PET     |    4577 |
+|    811 | 2014-01-31 00:00:00 |  403000 | HW      |    1080 |
+|    811 | 2014-01-31 00:00:00 |  403000 | HW      |    1080 |
++--------+---------------------+---------+---------+---------+
+184 rows in set (0.00 sec)
+
+--------------
+-- Query No. 9--
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+/*CREATE VIEW ORD_TOTAL AS
+SELECT
+    o.ord_id,
+    SUM(od.quoted_price * od.quantity_ordered) AS total_due
+FROM
+    ORDERS o
+JOIN ORDER_DETAILS od ON o.ord_id = od.ord_id
+GROUP BY
+    o.ord_id;
+
+*/
+SELECT * FROM ORD_TOTAL
+--------------
+
++--------+-----------+
+| ord_id | total_due |
++--------+-----------+
+|    105 |   1205.40 |
+|    106 |    255.95 |
+|    107 |     49.99 |
+|    108 |     22.50 |
+|    109 |    149.99 |
+|    110 |    299.98 |
+|    111 |    324.50 |
+|    112 |     99.98 |
+|    113 |     22.50 |
+|    114 |    625.00 |
+|    115 |   2305.00 |
+|    117 |    346.96 |
+|    118 |   1900.00 |
+|    119 |    225.00 |
+|    120 |   1750.00 |
+|    121 |   3800.25 |
+|    122 |    105.00 |
+|    124 |     14.99 |
+|    125 |     55.00 |
+|    126 |     49.99 |
+|    127 |    124.98 |
+|    128 |    511.90 |
+|    129 |    299.97 |
+|    130 |   1145.00 |
+|    218 |   2822.22 |
+|    223 |    739.46 |
+|    224 |   1609.90 |
+|    225 |     62.25 |
+|    227 |    440.47 |
+|    301 |    205.00 |
+|    302 |    469.95 |
+|    303 |    125.00 |
+|    306 |   1000.00 |
+|    307 |   4500.00 |
+|    312 |   9405.00 |
+|    313 |    125.00 |
+|    324 |    599.00 |
+|    378 |   4500.00 |
+|    390 |   1400.00 |
+|    395 |   2925.00 |
+|    400 |    465.00 |
+|    401 |    158.85 |
+|    402 |    158.85 |
+|    405 |   1068.75 |
+|    407 |     92.65 |
+|    408 |     15.00 |
+|    411 |    610.40 |
+|    412 |    149.99 |
+|    413 |    657.20 |
+|    414 |    168.35 |
+|    415 |   2879.95 |
+|    503 |    149.99 |
+|    504 |    149.99 |
+|    505 |    350.94 |
+|    507 |    145.99 |
+|    508 |    383.90 |
+|    509 |   1049.93 |
+|    510 |     74.25 |
+|    511 |    405.94 |
+|    515 |     49.99 |
+|    516 |     12.95 |
+|    518 |    759.43 |
+|    519 |    114.74 |
+|    520 |     77.70 |
+|    522 |     45.00 |
+|    523 |    149.99 |
+|    524 |    175.99 |
+|    525 |     52.77 |
+|    527 |    440.47 |
+|    528 |   2629.00 |
+|    529 |    279.49 |
+|    535 |    525.00 |
+|    536 |    525.00 |
+|    540 |    150.24 |
+|    550 |   2050.25 |
+|    551 |   3500.00 |
+|    552 |    157.30 |
+|    605 |   2718.35 |
+|    606 |     55.00 |
+|    607 |    222.50 |
+|    608 |    151.80 |
+|    609 |   9630.00 |
+|    610 |     59.90 |
+|    611 |    300.00 |
+|    715 |     81.45 |
+|    716 |     12.95 |
+|    718 |    727.97 |
+|    805 |   2280.40 |
+|    806 |     55.00 |
+|    807 |    222.50 |
+|    808 |    237.95 |
+|    809 |    125.00 |
+|    810 |     59.90 |
+|    811 |    600.00 |
++--------+-----------+
+94 rows in set (0.00 sec)
+
+mysql> notee

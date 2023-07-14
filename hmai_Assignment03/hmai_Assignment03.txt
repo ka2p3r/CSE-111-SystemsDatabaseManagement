@@ -1,0 +1,219 @@
+mysql> source C:\Users\vampb\Documents\CSE111\Mega Store database Scripts\Mega Store database Scripts\hmai_Assignment03.sql
+Database changed
++------------+--------------+-----------------+
+| product id | warehouse_id | quantity onhand |
++------------+--------------+-----------------+
+|       1000 |          100 |              80 |
+|       1020 |          125 |             100 |
+|       1072 |          250 |             100 |
+|       1090 |          250 |             100 |
+|       1140 |          250 |              50 |
+|       1150 |          200 |             100 |
+|       5004 |          125 |              59 |
+|       5008 |          200 |              75 |
++------------+--------------+-----------------+
+8 rows in set (0.00 sec)
+
++------------+--------------+-----------------+
+| product id | warehouse_id | quantity onhand |
++------------+--------------+-----------------+
+|       1020 |          125 |             100 |
+|       1070 |          100 |             250 |
+|       1072 |          250 |             100 |
+|       1090 |          250 |             100 |
+|       1100 |          125 |             250 |
+|       1130 |          125 |             250 |
+|       1140 |          250 |              50 |
+|       1150 |          125 |             250 |
+|       1150 |          200 |             100 |
+|       5004 |          200 |             150 |
+|       5005 |          200 |             200 |
++------------+--------------+-----------------+
+11 rows in set (0.00 sec)
+
++---------+--------------------+
+| item id | item name          |
++---------+--------------------+
+|    1080 | Cornpopper         |
+|    1150 | Cat exerciser      |
+|    1151 | Cat pillow         |
+|    1152 | Cat pillow Leather |
+|    4576 | Cosmo cat nip      |
+|    4577 | Cat leash          |
+|    5008 | Claw Framing       |
++---------+--------------------+
+7 rows in set (0.00 sec)
+
++---------+---------------------+
+| item id | item name           |
++---------+---------------------+
+|    1020 | Dartboard           |
+|    1050 | Stationary bike     |
+|    1060 | Mountain bike       |
+|    1070 | Iron                |
+|    1071 | Iron                |
+|    1072 | Iron                |
+|    1080 | Cornpopper          |
+|    1151 | Cat pillow          |
+|    1152 | Cat pillow Leather  |
+|    4575 | Electric can opener |
+|    4576 | Cosmo cat nip       |
+|    5000 | Fingerling Potatoes |
+|    5004 | Dead Blow Hammer    |
++---------+---------------------+
+13 rows in set (0.00 sec)
+
++-------------+-----------------------+-------------+
+| customer ID | street address        | postal code |
++-------------+-----------------------+-------------+
+|      404000 | 3032 Mauris Ave       | 94404       |
+|      409010 | 7333 West Road        | 82433       |
+|      915001 | 4890 Dignissim Street | 94401       |
++-------------+-----------------------+-------------+
+3 rows in set (0.00 sec)
+
++-------------+-----------------------+-------------+
+| customer ID | street address        | postal code |
++-------------+-----------------------+-------------+
+|      401250 | 83 Barrhill Drive     | 92441       |
+|      401890 | 17 Gartsquare Road    | 92433       |
+|      402100 | 54 Ropehill Crescent  | 82440       |
+|      402110 | 22 Jackson Farm Rd    | 92435       |
+|      402120 | 63 Acacia Drive       | 94240       |
+|      402500 | 17 Fourth St          | 82414       |
+|      403000 | 42 Blackwater Way     | 82433       |
+|      403010 | 1 Rascal Farm Rd      | 82414       |
+|      403100 | 2812 Scelerisque Ave  | 94441       |
+|      403500 | 6923 Ornare Av.       | 95433       |
+|      403750 | 3776 Egestas Street   | 98440       |
+|      403760 | 918 Sit Ave           | 94442       |
+|      903000 | 8079 Sollicitudin Ave | 82450       |
+|      404000 | 3032 Mauris Ave       | 94404       |
+|      404100 | 8829 Tempor Ave       | 92433       |
+|      404100 | 4589 Mollis St.       | 92414       |
+|      404150 | 4006 Molestie. Avenue | 90441       |
+|      404180 | 5371 Ultricies Street | 94402       |
+|      404890 | 6535 Purus. Ave       | 92440       |
+|      404900 | 1246 Penatibus St.    | 99435       |
+|      404950 | 6471 Eu, St.          | 94401       |
+|      405000 | 3611 Ac, Ave          | 94401       |
+|      409010 | 7333 West Road        | 82433       |
+|      409020 | 5044 Mi St.           | 95414       |
+|      915001 | 4890 Dignissim Street | 94401       |
+|      400801 | 6294 Phasellus Rd     | 93441       |
+|      409030 | A St.                 | 91441       |
+|      409150 | 4508 Erat Street      | 95441       |
+|      400300 | 6011 Sed Rd.          | 82441       |
+|      409160 | 4806 Vestibulum       | 92241       |
+|      409190 | 3144 Quis Road        | 93341       |
+|      408770 | 7668 Aliquet Avenue   | 93441       |
++-------------+-----------------------+-------------+
+32 rows in set (0.00 sec)
+
++---------+------------------------------------------------+---------+
+| prod_id | prod_desc                                      | catg_id |
++---------+------------------------------------------------+---------+
+|    5002 | 16 oz Jacketed Graphite Ball-peen hammer       | HD      |
+|    5004 | 10 oz Steel Head Dead Blow hammer              | HD      |
+|    5005 | Steel Shingler hammerhammer                    | HD      |
+|    5008 | 22 oz Graphite checkered face framing hammer   | HD      |
+|    1140 | Bird cage- simple; wire frame two feeder trays | PET     |
+|    1141 | Bird cage- deluxe;floor model, with fly space  | PET     |
+|    1142 | Bird seed mix with sunflowers                  | PET     |
+|    1143 | Bird seed mix with more sunflower seeds        | PET     |
+|    1150 | Cat exerciser                                  | PET     |
+|    1151 | Cat pillow, removable cloth cover              | PET     |
+|    1152 | Cat pillow, removable leather cover            | PET     |
+|    4567 | Our highest end cat tree- you gotta see this   | PET     |
+|    4568 | Satin four-poster cat bed                      | PET     |
+|    4576 | Primo brand of catnip for your favorite cat    | PET     |
+|    4577 | Leather cat leash with harness                 | PET     |
++---------+------------------------------------------------+---------+
+15 rows in set (0.00 sec)
+
++---------+------------+-----------+
+| cust_id | first_name | last_name |
++---------+------------+-----------+
+|  401250 | Samuel     | Morse     |
+|  402100 | William    | Morise    |
+|  404950 | William    | Morris    |
+|  409010 | William    | Morris    |
++---------+------------+-----------+
+4 rows in set (0.00 sec)
+
++---------+------------+-----------+
+| cust_id | first_name | last_name |
++---------+------------+-----------+
+|  402500 | Elton John | Jones     |
+|  403000 | Sally      | Williams  |
+|  403010 | Elisha     | Otis      |
+|  404900 | Al         | Williams  |
+|  404950 | William    | Morris    |
+|  409010 | William    | Morris    |
+|  915001 | Abigail    | Adams     |
++---------+------------+-----------+
+7 rows in set (0.00 sec)
+
++---------+------------------------------+---------+
+| prod_id | prod_desc                    | catg_id |
++---------+------------------------------+---------+
+|    2987 | Stanley Turrentine - Ballads | MUS     |
+|    1030 | Basketball                   | SPG     |
++---------+------------------------------+---------+
+2 rows in set (0.00 sec)
+
++------------+---------------+----------+
+| first_name | last_name     | salary   |
++------------+---------------+----------+
+| Steven     | King          | 24000.00 |
+| Shelley    | Higgins       | 12000.00 |
+| Sophia     | Barbosa Souza |  9500.00 |
+| Sarah      | Alves Rocha   |  7300.00 |
++------------+---------------+----------+
+4 rows in set (0.00 sec)
+
++---------+--------------------+-------------------------------------+
+| prod_id | prod_name          | prod_desc                           |
++---------+--------------------+-------------------------------------+
+|    4577 | Cat leash          | Leather cat leash with harness      |
+|    1152 | Cat pillow Leather | Cat pillow, removable leather cover |
+|    1151 | Cat pillow         | Cat pillow, removable cloth cover   |
+|    1150 | Cat exerciser      | Cat exerciser                       |
++---------+--------------------+-------------------------------------+
+4 rows in set (0.00 sec)
+
++---------+----------------------------------------------+---------+
+| prod_id | prod_desc                                    | catg_id |
++---------+----------------------------------------------+---------+
+|    1010 | Set of 12 barbells 15 pounds                 | SPG     |
+|    1020 | Cork-backed dartboard with hanger            | SPG     |
+|    1030 | Basketball                                   | SPG     |
+|    1040 | Super Flyer Treadmill                        | SPG     |
+|    1050 | Deluxe Stationary bike                       | SPG     |
+|    1060 | Deluxe Mountain bike                         | SPG     |
+|    1120 | Full-sized Washer                            | APL     |
+|    1125 | Low Energy Dryer                             | APL     |
+|    1126 | Low Energy washer Dryer combo                | APL     |
+|    1130 | Mini freezer, sized for the office           | APL     |
+|    2014 | Bix Beiderbecke - Tiger Rag                  | MUS     |
+|    2234 | Charles Mingus - Pithecanthropus Erectus     | MUS     |
+|    2337 | John Coltrane - Blue Train                   | MUS     |
+|    2412 | David Newman - Davey Blue                    | MUS     |
+|    2487 | Stanley Turrentine - Don't Mess With Mr. T   | MUS     |
+|    2746 | Charles Mingus - Blues & Politics            | MUS     |
+|    2747 | Charles Mingus - Blues & Roots               | MUS     |
+|    2933 | David Newman - I Remember Brother Ray        | MUS     |
+|    2947 | Ornette Coleman - Sound Grammer              | MUS     |
+|    2984 | John Coltrane - Lush Life                    | MUS     |
+|    2987 | Stanley Turrentine - Ballads                 | MUS     |
+|    4569 | Sized for the apartment                      | APL     |
+|    5000 | Cello bag of mixed fingerling potatoes       | GFD     |
+|    5001 | Dundee Ginger Preserve 12 oz jar             | GFD     |
+|    5002 | 16 oz Jacketed Graphite Ball-peen hammer     | HD      |
+|    5004 | 10 oz Steel Head Dead Blow hammer            | HD      |
+|    5005 | Steel Shingler hammerhammer                  | HD      |
+|    5008 | 22 oz Graphite checkered face framing hammer | HD      |
++---------+----------------------------------------------+---------+
+28 rows in set (0.00 sec)
+
+mysql> Terminal close -- exit!

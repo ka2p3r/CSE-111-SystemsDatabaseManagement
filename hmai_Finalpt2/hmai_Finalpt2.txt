@@ -1,0 +1,249 @@
+mysql> source C:\Users\vampb\OneDrive\Desktop\CS31_Final\hmai_Finalpt2.sql
+Database changed
+--------------
+-- Query No. 1 --
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT *
+FROM GROUP_INFO
+ORDER BY group_name ASC
+--------------
+
+Empty set (0.00 sec)
+
+--------------
+-- Query No. 2 --
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT first_name, last_name
+FROM USER
+WHERE city = 'San Francisco'
+--------------
+
+Empty set (0.00 sec)
+
+--------------
+-- Query No. 3--
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT first_name, last_name, city, state, zip_code, country
+FROM USER
+ORDER BY last_name ASC
+--------------
+
+Empty set (0.00 sec)
+
+--------------
+-- Query No. 4 --
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT post_content 
+FROM USER_POST WHERE post_content LIKE '%help%'
+--------------
+
+Empty set (0.00 sec)
+
+--------------
+-- Query No. 5 --
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT email, city FROM USER
+--------------
+
+Empty set (0.00 sec)
+
+--------------
+-- Query No. 6 --
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT u.last_name, subq.requests_sent
+FROM (
+    SELECT sender_id, COUNT(*) AS requests_sent
+    FROM USER_FRIEND
+    GROUP BY sender_id
+) AS subq
+JOIN USER AS u ON u.user_id = subq.sender_id
+ORDER BY subq.requests_sent DESC
+LIMIT 3
+--------------
+
+Empty set (0.00 sec)
+
+--------------
+-- Query No. 7 --
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT COUNT(*) AS num_accepted_requests
+FROM USER_FRIEND
+WHERE u_status = 'accepted'
+--------------
+
++-----------------------+
+| num_accepted_requests |
++-----------------------+
+|                     0 |
++-----------------------+
+1 row in set (0.00 sec)
+
+--------------
+-- Query No. 8 --
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT CONCAT(ROUND((COUNT(CASE WHEN u_status = 'accepted' THEN 1 END) / COUNT(*) * 100), 2), '%') 
+AS acceptance_rate
+FROM USER_FRIEND
+--------------
+
++-----------------+
+| acceptance_rate |
++-----------------+
+| NULL            |
++-----------------+
+1 row in set, 1 warning (0.00 sec)
+
+--------------
+-- Query No. 9 --
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT um.to_user_id, COUNT(um.message_id) AS unread_messages
+FROM USER_MESSAGE um
+WHERE um.date_read IS NULL
+GROUP BY um.to_user_id
+HAVING COUNT(um.message_id) > 10
+--------------
+
+Empty set (0.00 sec)
+
+--------------
+-- Query No. 10 --
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT p.post_id, p.user_id, p.post_content, p.created_at, p.updated_at
+FROM USER_POST AS p
+WHERE
+  (
+    SELECT
+      COUNT(c.comment_id)
+    FROM
+      POST_COMMENTS AS c
+    WHERE
+      c.post_id = p.post_id
+  ) = 0
+--------------
+
+Empty set (0.00 sec)
+
+--------------
+-- Query No. 11 --
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT COUNT(*) AS group_count, join_mode 
+FROM GROUP_INFO 
+GROUP BY join_mode
+--------------
+
+Empty set (0.00 sec)
+
+--------------
+-- Query No. 12 --
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT c.category_id, c.category_name, COUNT(g.group_id) AS num_groups
+FROM CATEGORY c
+JOIN GROUP_INFO g ON c.category_id = g.category_id
+GROUP BY c.category_id, c.category_name
+ORDER BY num_groups DESC
+LIMIT 5
+--------------
+
+Empty set (0.00 sec)
+
+--------------
+-- Query No. 13 --
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT category_id, category_name,
+    (SELECT COUNT(*) FROM GROUP_INFO 
+    WHERE CATEGORY.category_id = GROUP_INFO.category_id) 
+    AS group_count
+FROM CATEGORY
+ORDER BY group_count ASC
+LIMIT 5
+--------------
+
+Empty set (0.00 sec)
+
+--------------
+-- Query No. 14 --
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT COUNT(user_id) as total_members FROM USER
+--------------
+
++---------------+
+| total_members |
++---------------+
+|             0 |
++---------------+
+1 row in set (0.00 sec)
+
+--------------
+-- Query No. 15 --
+--------------
+
+Query OK, 0 rows affected (0.00 sec)
+
+--------------
+SELECT g.group_id, g.group_name,
+    (SELECT COUNT(*) FROM GROUP_MEMBER gm WHERE gm.group_id = g.group_id) AS member_count,
+    DATEDIFF(CURRENT_DATE, g.created) AS days_since_created
+FROM GROUP_INFO g
+ORDER BY days_since_created DESC
+LIMIT 1
+--------------
+
+Empty set (0.00 sec)
+
+mysql> notee

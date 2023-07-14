@@ -1,0 +1,461 @@
+mysql> source C:\Users\vampb\OneDrive\Desktop\hmai_assignment06.sql
+Database changed
++--------------+
+| Average      |
++--------------+
+| 12660.000000 |
++--------------+
+1 row in set (0.00 sec)
+
++---------------+-------------+-------------+-------------+
+| lowest_salary | recent_hire | f_last_name | l_last_name |
++---------------+-------------+-------------+-------------+
+|       4200.00 | 2013-11-18  | Ernst       | Lorentz     |
++---------------+-------------+-------------+-------------+
+1 row in set (0.00 sec)
+
++---------------+----------+
+| employee name | salary   |
++---------------+----------+
+| NeenaKochhar  | 17000.00 |
++---------------+----------+
+1 row in set (0.00 sec)
+
++-----------------+----------------+
+| first last name | last last name |
++-----------------+----------------+
+| Abel            | Zlotkey        |
++-----------------+----------------+
+1 row in set (0.00 sec)
+
++--------+---------------+
+| emp_id | weekly salary |
++--------+---------------+
+|    100 | $461.54       |
+|    101 | $326.92       |
+|    102 | $326.92       |
+|    103 | $173.08       |
+|    104 | $115.38       |
+|    107 | $80.77        |
+|    124 | $111.54       |
+|    141 | $67.31        |
+|    142 | $59.62        |
+|    143 | $50.00        |
+|    144 | $48.08        |
+|    149 | $201.92       |
+|    174 | $211.54       |
+|    176 | $165.38       |
+|    178 | $134.62       |
+|    200 | $84.62        |
+|    201 | $250.00       |
+|    202 | $75.00        |
+|    205 | $230.77       |
+|    206 | $159.62       |
+|    207 | $182.69       |
+|    208 | $144.23       |
+|    209 | $140.38       |
+|    210 | $140.38       |
+|    212 | $184.62       |
+|    215 | $165.38       |
+|    216 | $67.31        |
+|    217 | $76.92        |
+|    219 | $71.15        |
+|    220 | $50.00        |
+|    222 | $153.85       |
+|    223 | $150.00       |
+|    224 | $155.77       |
+|    225 | $82.69        |
+|    226 | $78.85        |
+|    227 | $84.62        |
+|    228 | $96.15        |
+|    231 | $103.85       |
+|    232 | $100.00       |
+|    235 | $94.23        |
++--------+---------------+
+40 rows in set (0.00 sec)
+
++---------+------------------------------------------------+
+| prod_id | Prod_description                               |
++---------+------------------------------------------------+
+|    1000 | SEVEN SPEED BND HAND MIXER, BLACK              |
+|    1010 | SET OF 12 BARBELLS 15 POUNDS                   |
+|    1020 | CORK-BACKED DARTBOARD WITH HANGER              |
+|    1030 | BASKETBALL                                     |
+|    1040 | SUPER FLYER TREADMILL                          |
+|    1050 | DELUXE STATIONARY BIKE                         |
+|    1060 | DELUXE MOUNTAIN BIKE                           |
+|    1070 | STEAM AND DRY IRON SUNSHINE, YELLOW            |
+|    1071 | STEAM AND DRY IRON SUNSHINE, BLUE              |
+|    1072 | STEAM AND DRY IRON SUNSHINE, RED               |
+|    1080 | CORNPOPPER 12 QUART AUTOMATIC SHUTOFF          |
+|    1090 | GAS GRILL                                      |
+|    1100 | TWELVE-SPEED BLENDER                           |
+|    1110 | ELECTRIC PANCAKE GRIDDLE                       |
+|    1120 | FULL-SIZED WASHER                              |
+|    1125 | LOW ENERGY DRYER                               |
+|    1126 | LOW ENERGY WASHER DRYER COMBO                  |
+|    1130 | MINI FREEZER, SIZED FOR THE OFFICE             |
+|    1140 | BIRD CAGE- SIMPLE; WIRE FRAME TWO FEEDER TRAYS |
+|    1141 | BIRD CAGE- DELUXE;FLOOR MODEL, WITH FLY SPACE  |
+|    1142 | BIRD SEED MIX WITH SUNFLOWERS                  |
+|    1143 | BIRD SEED MIX WITH MORE SUNFLOWER SEEDS        |
+|    1150 | CAT EXERCISER                                  |
+|    1151 | CAT PILLOW, REMOVABLE CLOTH COVER              |
+|    1152 | CAT PILLOW, REMOVABLE LEATHER COVER            |
+|    1160 | STAND MIXER WITH ATTACHMENTS                   |
+|    2014 | BIX BEIDERBECKE - TIGER RAG                    |
+|    2234 | CHARLES MINGUS - PITHECANTHROPUS ERECTUS       |
+|    2337 | JOHN COLTRANE - BLUE TRAIN                     |
+|    2412 | DAVID NEWMAN - DAVEY BLUE                      |
+|    2487 | STANLEY TURRENTINE - DON'T MESS WITH MR. T     |
+|    2746 | CHARLES MINGUS - BLUES & POLITICS              |
+|    2747 | CHARLES MINGUS - BLUES & ROOTS                 |
+|    2933 | DAVID NEWMAN - I REMEMBER BROTHER RAY          |
+|    2947 | ORNETTE COLEMAN - SOUND GRAMMER                |
+|    2984 | JOHN COLTRANE - LUSH LIFE                      |
+|    2987 | STANLEY TURRENTINE - BALLADS                   |
+|    4567 | OUR HIGHEST END CAT TREE- YOU GOTTA SEE THIS   |
+|    4568 | SATIN FOUR-POSTER CAT BED                      |
+|    4569 | SIZED FOR THE APARTMENT                        |
+|    4575 | GE MODEL 34PG98                                |
+|    4576 | PRIMO BRAND OF CATNIP FOR YOUR FAVORITE CAT    |
+|    4577 | LEATHER CAT LEASH WITH HARNESS                 |
+|    5000 | CELLO BAG OF MIXED FINGERLING POTATOES         |
+|    5001 | DUNDEE GINGER PRESERVE 12 OZ JAR               |
+|    5002 | 16 OZ JACKETED GRAPHITE BALL-PEEN HAMMER       |
+|    5004 | 10 OZ STEEL HEAD DEAD BLOW HAMMER              |
+|    5005 | STEEL SHINGLER HAMMERHAMMER                    |
+|    5008 | 22 OZ GRAPHITE CHECKERED FACE FRAMING HAMMER   |
++---------+------------------------------------------------+
+49 rows in set (0.00 sec)
+
++---------+------------+------------+---------+
+| cust_id | first_name | last_name  | balance |
++---------+------------+------------+---------+
+|  400300 | Arnold     | McGold     |    6000 |
+|  400801 | Geo        | Washington |     750 |
+|  401250 | Samuel     | Morse      |     750 |
+|  401890 | William    | Northrep   |    1750 |
+|  402100 | William    | Morise     |     750 |
+|  402110 | John       | Coltrane   |     750 |
+|  402120 | Tyner      | McCoy      |     750 |
+|  402500 | Elton John | Jones      |    NULL |
+|  403000 | Sally      | Williams   |    6000 |
+|  403010 | Elisha     | Otis       |    6000 |
+|  403050 | Alexis     | Hamilton   |    6000 |
+|  403100 | James      | Stevenson  |    6000 |
+|  403500 | JAMES      | Stevenson  |    6000 |
+|  403750 | Mary       | O'Leary    |    6000 |
+|  403760 | Mary       | O'Leary    |    6000 |
+|  404000 | Frederick  | Olmsted    |    3500 |
+|  404100 | D. K.      | Button     |    3500 |
+|  404150 | Tom        | Dancer     |    3500 |
+|  404180 | Danielle   | Shay       |    3500 |
+|  404890 | Florence   | Kelley     |    1750 |
+|  404900 | Al         | Williams   |    1750 |
+|  404950 | William    | Morris     |    1750 |
+|  405000 | David      | Day        |    NULL |
+|  408770 | Clem       | Clay       |    7500 |
+|  409010 | William    | Morris     |    1750 |
+|  409020 | William    | Max        |    1750 |
+|  409030 | Barry      | Mazur      |    6000 |
+|  409150 | Joan       | Martin     |    1750 |
+|  409160 | Jane       | Martin     |    1750 |
+|  409190 | NULL       | Prince     |    1750 |
+|  900300 | Arnold     | McGold     |    6000 |
+|  903000 | Arnold     | McGold     |    6000 |
+|  915001 | Abigail    | Adams      |    1750 |
++---------+------------+------------+---------+
+33 rows in set (0.00 sec)
+
++--------+---------+------------+-----------+---------------------+---------------------+
+| ord_id | cust_id | first_name | last_name | ord_date            | promotion_date      |
++--------+---------+------------+-----------+---------------------+---------------------+
+|    378 |  400300 | Arnold     | McGold    | 2014-06-14 00:00:00 | 2014-07-04 00:00:00 |
+|    106 |  401250 | Samuel     | Morse     | 2013-10-01 00:00:00 | 2013-10-21 00:00:00 |
+|    113 |  401250 | Samuel     | Morse     | 2013-11-08 00:00:00 | 2013-11-28 00:00:00 |
+|    119 |  401250 | Samuel     | Morse     | 2013-11-28 00:00:00 | 2013-12-18 00:00:00 |
+|    301 |  401250 | Samuel     | Morse     | 2014-06-04 00:00:00 | 2014-06-24 00:00:00 |
+|    506 |  401250 | Samuel     | Morse     | 2014-01-12 00:00:00 | 2014-02-01 00:00:00 |
+|    552 |  401250 | Samuel     | Morse     | 2014-08-12 00:00:00 | 2014-09-01 00:00:00 |
+|    112 |  401890 | William    | Northrep  | 2013-11-08 00:00:00 | 2013-11-28 00:00:00 |
+|    519 |  401890 | William    | Northrep  | 2014-04-04 00:00:00 | 2014-04-24 00:00:00 |
+|    114 |  402100 | William    | Morise    | 2013-11-08 00:00:00 | 2013-11-28 00:00:00 |
+|    115 |  402100 | William    | Morise    | 2013-11-08 00:00:00 | 2013-11-28 00:00:00 |
+|    117 |  402100 | William    | Morise    | 2013-11-28 00:00:00 | 2013-12-18 00:00:00 |
+|    105 |  403000 | Sally      | Williams  | 2013-10-01 00:00:00 | 2013-10-21 00:00:00 |
+|    108 |  403000 | Sally      | Williams  | 2013-10-02 00:00:00 | 2013-10-22 00:00:00 |
+|    109 |  403000 | Sally      | Williams  | 2013-10-12 00:00:00 | 2013-11-01 00:00:00 |
+|    111 |  403000 | Sally      | Williams  | 2013-11-01 00:00:00 | 2013-11-21 00:00:00 |
+|    390 |  403000 | Sally      | Williams  | 2014-06-04 00:00:00 | 2014-06-24 00:00:00 |
+|    395 |  403000 | Sally      | Williams  | 2014-06-04 00:00:00 | 2014-06-24 00:00:00 |
+|    412 |  403000 | Sally      | Williams  | 2014-07-01 00:00:00 | 2014-07-21 00:00:00 |
+|    505 |  403000 | Sally      | Williams  | 2014-01-12 00:00:00 | 2014-02-01 00:00:00 |
+|    508 |  403000 | Sally      | Williams  | 2014-02-01 00:00:00 | 2014-02-21 00:00:00 |
+|    509 |  403000 | Sally      | Williams  | 2014-02-12 00:00:00 | 2014-03-04 00:00:00 |
+|    511 |  403000 | Sally      | Williams  | 2014-02-01 00:00:00 | 2014-02-21 00:00:00 |
+|    528 |  403000 | Sally      | Williams  | 2014-05-01 00:00:00 | 2014-05-21 00:00:00 |
+|    529 |  403000 | Sally      | Williams  | 2014-05-12 00:00:00 | 2014-06-01 00:00:00 |
+|    536 |  403000 | Sally      | Williams  | 2014-05-12 00:00:00 | 2014-06-01 00:00:00 |
+|    608 |  403000 | Sally      | Williams  | 2013-09-26 00:00:00 | 2013-10-16 00:00:00 |
+|    611 |  403000 | Sally      | Williams  | 2013-09-30 00:00:00 | 2013-10-20 00:00:00 |
+|    808 |  403000 | Sally      | Williams  | 2014-01-26 00:00:00 | 2014-02-15 00:00:00 |
+|    811 |  403000 | Sally      | Williams  | 2014-01-31 00:00:00 | 2014-02-20 00:00:00 |
+|    118 |  403010 | Elisha     | Otis      | 2013-11-28 00:00:00 | 2013-12-18 00:00:00 |
+|    107 |  403050 | Alexis     | Hamilton  | 2013-10-02 00:00:00 | 2013-10-22 00:00:00 |
+|    227 |  403050 | Alexis     | Hamilton  | 2013-08-01 00:00:00 | 2013-08-21 00:00:00 |
+|    507 |  403050 | Alexis     | Hamilton  | 2014-02-01 00:00:00 | 2014-02-21 00:00:00 |
+|    527 |  403050 | Alexis     | Hamilton  | 2014-05-01 00:00:00 | 2014-05-21 00:00:00 |
+|    400 |  403100 | James      | Stevenson | 2013-10-15 00:00:00 | 2013-11-04 00:00:00 |
+|    401 |  403100 | James      | Stevenson | 2013-10-15 00:00:00 | 2013-11-04 00:00:00 |
+|    402 |  403100 | James      | Stevenson | 2013-10-18 00:00:00 | 2013-11-07 00:00:00 |
+|    407 |  403100 | James      | Stevenson | 2013-11-15 00:00:00 | 2013-12-05 00:00:00 |
+|    302 |  404000 | Frederick  | Olmsted   | 2014-06-04 00:00:00 | 2014-06-24 00:00:00 |
+|    303 |  404100 | D. K.      | Button    | 2014-06-10 00:00:00 | 2014-06-30 00:00:00 |
+|    503 |  404100 | D. K.      | Button    | 2014-01-04 00:00:00 | 2014-01-24 00:00:00 |
+|    504 |  404100 | D. K.      | Button    | 2014-01-11 00:00:00 | 2014-01-31 00:00:00 |
+|    605 |  404100 | D. K.      | Button    | 2013-09-05 00:00:00 | 2013-09-25 00:00:00 |
+|    805 |  404100 | D. K.      | Button    | 2014-01-05 00:00:00 | 2014-01-25 00:00:00 |
+|    520 |  404900 | Al         | Williams  | 2014-04-04 00:00:00 | 2014-04-24 00:00:00 |
+|    110 |  404950 | William    | Morris    | 2013-10-12 00:00:00 | 2013-11-01 00:00:00 |
+|    408 |  404950 | William    | Morris    | 2013-11-20 00:00:00 | 2013-12-10 00:00:00 |
+|    411 |  404950 | William    | Morris    | 2014-07-01 00:00:00 | 2014-07-21 00:00:00 |
+|    510 |  404950 | William    | Morris    | 2014-02-01 00:00:00 | 2014-02-21 00:00:00 |
+|    535 |  404950 | William    | Morris    | 2014-05-12 00:00:00 | 2014-06-01 00:00:00 |
+|    540 |  404950 | William    | Morris    | 2014-06-02 00:00:00 | 2014-06-22 00:00:00 |
+|    116 |  405000 | David      | Day       | 2013-11-12 00:00:00 | 2013-12-02 00:00:00 |
+|    405 |  408770 | Clem       | Clay      | 2013-11-19 00:00:00 | 2013-12-09 00:00:00 |
+|    128 |  409030 | Barry      | Mazur     | 2013-12-15 00:00:00 | 2014-01-04 00:00:00 |
+|    130 |  409030 | Barry      | Mazur     | 2013-12-30 00:00:00 | 2014-01-19 00:00:00 |
+|    324 |  409030 | Barry      | Mazur     | 2014-06-11 00:00:00 | 2014-07-01 00:00:00 |
+|    122 |  409150 | Joan       | Martin    | 2014-01-23 00:00:00 | 2014-02-12 00:00:00 |
+|    123 |  409150 | Joan       | Martin    | 2013-12-05 00:00:00 | 2013-12-25 00:00:00 |
+|    218 |  409150 | Joan       | Martin    | 2013-08-08 00:00:00 | 2013-08-28 00:00:00 |
+|    223 |  409150 | Joan       | Martin    | 2013-08-05 00:00:00 | 2013-08-25 00:00:00 |
+|    413 |  409150 | Joan       | Martin    | 2014-07-07 00:00:00 | 2014-07-27 00:00:00 |
+|    414 |  409150 | Joan       | Martin    | 2014-07-20 00:00:00 | 2014-08-09 00:00:00 |
+|    415 |  409150 | Joan       | Martin    | 2014-07-23 00:00:00 | 2014-08-12 00:00:00 |
+|    515 |  409150 | Joan       | Martin    | 2014-02-02 00:00:00 | 2014-02-22 00:00:00 |
+|    516 |  409150 | Joan       | Martin    | 2014-02-02 00:00:00 | 2014-02-22 00:00:00 |
+|    518 |  409150 | Joan       | Martin    | 2014-02-03 00:00:00 | 2014-02-23 00:00:00 |
+|    522 |  409150 | Joan       | Martin    | 2014-04-05 00:00:00 | 2014-04-25 00:00:00 |
+|    523 |  409150 | Joan       | Martin    | 2014-04-05 00:00:00 | 2014-04-25 00:00:00 |
+|    715 |  409150 | Joan       | Martin    | 2014-04-05 00:00:00 | 2014-04-25 00:00:00 |
+|    716 |  409150 | Joan       | Martin    | 2014-02-06 00:00:00 | 2014-02-26 00:00:00 |
+|    718 |  409150 | Joan       | Martin    | 2014-04-08 00:00:00 | 2014-04-28 00:00:00 |
+|    124 |  409160 | Jane       | Martin    | 2013-12-07 00:00:00 | 2013-12-27 00:00:00 |
+|    125 |  409160 | Jane       | Martin    | 2013-12-09 00:00:00 | 2013-12-29 00:00:00 |
+|    224 |  409160 | Jane       | Martin    | 2013-08-07 00:00:00 | 2013-08-27 00:00:00 |
+|    225 |  409160 | Jane       | Martin    | 2013-08-09 00:00:00 | 2013-08-29 00:00:00 |
+|    524 |  409160 | Jane       | Martin    | 2014-04-07 00:00:00 | 2014-04-27 00:00:00 |
+|    525 |  409160 | Jane       | Martin    | 2014-05-09 00:00:00 | 2014-05-29 00:00:00 |
+|    606 |  409160 | Jane       | Martin    | 2013-09-07 00:00:00 | 2013-09-27 00:00:00 |
+|    607 |  409160 | Jane       | Martin    | 2013-09-15 00:00:00 | 2013-10-05 00:00:00 |
+|    806 |  409160 | Jane       | Martin    | 2014-01-07 00:00:00 | 2014-01-27 00:00:00 |
+|    807 |  409160 | Jane       | Martin    | 2014-01-15 00:00:00 | 2014-02-04 00:00:00 |
+|    126 |  409190 | NULL       | Prince    | 2013-12-15 00:00:00 | 2014-01-04 00:00:00 |
+|    307 |  900300 | Arnold     | McGold    | 2014-06-04 00:00:00 | 2014-06-24 00:00:00 |
+|    609 |  900300 | Arnold     | McGold    | 2013-09-27 00:00:00 | 2013-10-17 00:00:00 |
+|    809 |  900300 | Arnold     | McGold    | 2014-01-27 00:00:00 | 2014-02-16 00:00:00 |
+|    120 |  903000 | Arnold     | McGold    | 2014-01-02 00:00:00 | 2014-01-22 00:00:00 |
+|    121 |  903000 | Arnold     | McGold    | 2014-01-03 00:00:00 | 2014-01-23 00:00:00 |
+|    306 |  903000 | Arnold     | McGold    | 2014-06-04 00:00:00 | 2014-06-24 00:00:00 |
+|    312 |  903000 | Arnold     | McGold    | 2014-06-07 00:00:00 | 2014-06-27 00:00:00 |
+|    313 |  903000 | Arnold     | McGold    | 2014-06-07 00:00:00 | 2014-06-27 00:00:00 |
+|    550 |  903000 | Arnold     | McGold    | 2014-08-02 00:00:00 | 2014-08-22 00:00:00 |
+|    551 |  903000 | Arnold     | McGold    | 2014-08-03 00:00:00 | 2014-08-23 00:00:00 |
+|    610 |  903000 | Arnold     | McGold    | 2013-09-27 00:00:00 | 2013-10-17 00:00:00 |
+|    810 |  903000 | Arnold     | McGold    | 2014-01-27 00:00:00 | 2014-02-16 00:00:00 |
+|    127 |  915001 | Abigail    | Adams     | 2013-12-15 00:00:00 | 2014-01-04 00:00:00 |
+|    129 |  915001 | Abigail    | Adams     | 2013-12-15 00:00:00 | 2014-01-04 00:00:00 |
++--------+---------+------------+-----------+---------------------+---------------------+
+97 rows in set (0.00 sec)
+
++---------+-----------+
+| prod_id | NumOrders |
++---------+-----------+
+|    1080 |        15 |
+|    1130 |        13 |
+|    1010 |        12 |
+|    1020 |        11 |
+|    1060 |        10 |
+|    1141 |        10 |
+|    1110 |         9 |
+|    1125 |         9 |
+|    1040 |         8 |
+|    1070 |         8 |
+|    1090 |         6 |
+|    1152 |         6 |
+|    2014 |         6 |
+|    1000 |         5 |
+|    1120 |         5 |
+|    1150 |         5 |
+|    1030 |         4 |
+|    1050 |         4 |
+|    1071 |         4 |
+|    1100 |         4 |
+|    2984 |         4 |
+|    4577 |         4 |
+|    1072 |         3 |
+|    5002 |         3 |
+|    5005 |         3 |
+|    5008 |         2 |
+|    2412 |         2 |
+|    2746 |         2 |
+|    2947 |         2 |
+|    1151 |         1 |
+|    2747 |         1 |
+|    5004 |         1 |
+|    4576 |         1 |
+|    1140 |         1 |
++---------+-----------+
+34 rows in set (0.00 sec)
+
++---------+-----------------+
+| cust_id | number_of_items |
++---------+-----------------+
+|  400300 |               2 |
+|  401250 |               6 |
+|  401890 |               2 |
+|  402100 |               8 |
+|  403000 |              15 |
+|  403050 |               4 |
+|  403100 |               5 |
+|  404000 |               2 |
+|  404100 |               6 |
+|  404900 |               2 |
+|  404950 |              10 |
+|  408770 |               6 |
+|  409030 |               5 |
+|  409150 |              13 |
+|  409160 |               8 |
+|  900300 |               5 |
+|  903000 |               8 |
+|  915001 |               4 |
++---------+-----------------+
+18 rows in set (0.00 sec)
+
++---------+--------------------+-------------------------------+
+| catg_id | number_of_products | Average price of the products |
++---------+--------------------+-------------------------------+
+| HW      |                 10 |                     67.641000 |
+| MUS     |                 11 |                     13.878182 |
+| PET     |                 11 |                    123.192727 |
+| SPG     |                  6 |                    178.125000 |
++---------+--------------------+-------------------------------+
+4 rows in set (0.00 sec)
+
++------------+---------+
+| avgPrice   | catg_id |
++------------+---------+
+| 479.986000 | APL     |
+|   8.750000 | GFD     |
+|  23.875000 | HD      |
+|  67.641000 | HW      |
+|  13.878182 | MUS     |
+| 123.192727 | PET     |
+| 178.125000 | SPG     |
++------------+---------+
+7 rows in set (0.00 sec)
+
++--------+---------+---------+--------------------+
+| ord_id | prod_id | catg_id | prod_name          |
++--------+---------+---------+--------------------+
+|    105 |    1010 | SPG     | Weights            |
+|    105 |    1020 | SPG     | Dartboard          |
+|    105 |    1030 | SPG     | Basketball         |
+|    106 |    1060 | SPG     | Mountain bike      |
+|    111 |    1150 | PET     | Cat exerciser      |
+|    111 |    1141 | PET     | Bird cage- deluxe  |
+|    117 |    1150 | PET     | Cat exerciser      |
+|    117 |    1030 | SPG     | Basketball         |
+|    117 |    1141 | PET     | Bird cage- deluxe  |
+|    120 |    1010 | SPG     | Weights            |
+|    121 |    1010 | SPG     | Weights            |
+|    121 |    1040 | SPG     | Treadmill          |
+|    124 |    1151 | PET     | Cat pillow         |
+|    125 |    1152 | PET     | Cat pillow Leather |
+|    128 |    1060 | SPG     | Mountain bike      |
+|    129 |    1141 | PET     | Bird cage- deluxe  |
+|    218 |    1141 | PET     | Bird cage- deluxe  |
+|    223 |    1141 | PET     | Bird cage- deluxe  |
+|    223 |    1150 | PET     | Cat exerciser      |
+|    227 |    1141 | PET     | Bird cage- deluxe  |
+|    227 |    1150 | PET     | Cat exerciser      |
+|    302 |    1140 | PET     | Bird cage- simple  |
+|    302 |    1040 | SPG     | Treadmill          |
+|    312 |    1060 | SPG     | Mountain bike      |
+|    312 |    1060 | SPG     | Mountain bike      |
+|    312 |    1050 | SPG     | Stationary bike    |
+|    312 |    1040 | SPG     | Treadmill          |
+|    324 |    4576 | PET     | Cosmo cat nip      |
+|    390 |    1010 | SPG     | Weights            |
+|    395 |    1010 | SPG     | Weights            |
+|    401 |    4577 | PET     | Cat leash          |
+|    402 |    4577 | PET     | Cat leash          |
+|    405 |    1060 | SPG     | Mountain bike      |
+|    405 |    1010 | SPG     | Weights            |
+|    405 |    1040 | SPG     | Treadmill          |
+|    405 |    1030 | SPG     | Basketball         |
+|    405 |    1050 | SPG     | Stationary bike    |
+|    405 |    1020 | SPG     | Dartboard          |
+|    411 |    1060 | SPG     | Mountain bike      |
+|    414 |    1020 | SPG     | Dartboard          |
+|    415 |    1141 | PET     | Bird cage- deluxe  |
+|    505 |    1060 | SPG     | Mountain bike      |
+|    508 |    1152 | PET     | Cat pillow Leather |
+|    508 |    1152 | PET     | Cat pillow Leather |
+|    511 |    1060 | SPG     | Mountain bike      |
+|    516 |    1020 | SPG     | Dartboard          |
+|    518 |    1141 | PET     | Bird cage- deluxe  |
+|    519 |    1020 | SPG     | Dartboard          |
+|    520 |    1020 | SPG     | Dartboard          |
+|    527 |    1141 | PET     | Bird cage- deluxe  |
+|    527 |    1150 | PET     | Cat exerciser      |
+|    528 |    1010 | SPG     | Weights            |
+|    528 |    1030 | SPG     | Basketball         |
+|    529 |    1020 | SPG     | Dartboard          |
+|    535 |    1050 | SPG     | Stationary bike    |
+|    535 |    1040 | SPG     | Treadmill          |
+|    536 |    1040 | SPG     | Treadmill          |
+|    536 |    1050 | SPG     | Stationary bike    |
+|    540 |    1152 | PET     | Cat pillow Leather |
+|    550 |    1010 | SPG     | Weights            |
+|    550 |    1040 | SPG     | Treadmill          |
+|    551 |    1010 | SPG     | Weights            |
+|    605 |    1060 | SPG     | Mountain bike      |
+|    605 |    1020 | SPG     | Dartboard          |
+|    605 |    1010 | SPG     | Weights            |
+|    606 |    1152 | PET     | Cat pillow Leather |
+|    608 |    1020 | SPG     | Dartboard          |
+|    609 |    1040 | SPG     | Treadmill          |
+|    609 |    1010 | SPG     | Weights            |
+|    610 |    4577 | PET     | Cat leash          |
+|    716 |    1020 | SPG     | Dartboard          |
+|    718 |    1141 | PET     | Bird cage- deluxe  |
+|    805 |    1060 | SPG     | Mountain bike      |
+|    806 |    1152 | PET     | Cat pillow Leather |
+|    808 |    1020 | SPG     | Dartboard          |
+|    808 |    1010 | SPG     | Weights            |
+|    810 |    4577 | PET     | Cat leash          |
++--------+---------+---------+--------------------+
+77 rows in set (0.00 sec)
+
++---------+---------+--------------------+
+| prod_id | catg_id | prod_name          |
++---------+---------+--------------------+
+|    1000 | HW      | Hand Mixer         |
+|    1070 | HW      | Iron               |
+|    1071 | HW      | Iron               |
+|    1080 | HW      | Cornpopper         |
+|    1090 | HW      | Gas grill          |
+|    1100 | HW      | Blender            |
+|    1110 | HW      | Pancake griddle    |
+|    1141 | PET     | Bird cage- deluxe  |
+|    1150 | PET     | Cat exerciser      |
+|    1151 | PET     | Cat pillow         |
+|    1152 | PET     | Cat pillow Leather |
++---------+---------+--------------------+
+11 rows in set (0.00 sec)
+
+mysql> notee

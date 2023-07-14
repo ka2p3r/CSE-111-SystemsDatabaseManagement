@@ -1,0 +1,97 @@
+mysql> source C:\Users\vampb\Desktop\hmai_assignment04.sql
+Database changed
+Query OK, 0 rows affected, 2 warnings (0.03 sec)
+
+ERROR 1050 (42S01): Table 'locations' already exists
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
++-------------------+-------------+------+-----+---------+-------+
+| Field             | Type        | Null | Key | Default | Extra |
++-------------------+-------------+------+-----+---------+-------+
+| id                | int         | NO   | PRI | NULL    |       |
+| loc_name          | varchar(20) | YES  |     | NULL    |       |
+| address           | varchar(20) | YES  |     | NULL    |       |
+| city              | varchar(20) | YES  |     | NULL    |       |
+| zip_postal_code   | varchar(20) | YES  |     | NULL    |       |
+| phone             | varchar(15) | YES  |     | NULL    |       |
+| email             | varchar(15) | YES  | UNI | NULL    |       |
+| manager_id        | int         | YES  |     | NULL    |       |
+| emergency_contact | varchar(20) | YES  |     | NULL    |       |
+| dafe_opened       | date        | YES  |     | NULL    |       |
++-------------------+-------------+------+-----+---------+-------+
+10 rows in set (0.00 sec)
+
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.02 sec)
+
+ERROR 1050 (42S01): Table 'employee_pay' already exists
+ERROR 1062 (23000): Duplicate entry '184167702' for key 'employee_pay.PRIMARY'
++-------------+-------------+--------+------------+
+| employee_id | ssn         | salary | hire_date  |
++-------------+-------------+--------+------------+
+|   184167702 | 744-04-9444 |   5500 | 2011-03-15 |
++-------------+-------------+--------+------------+
+1 row in set (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
++-------------+---------------+------+-----+---------+-------+
+| Field       | Type          | Null | Key | Default | Extra |
++-------------+---------------+------+-----+---------+-------+
+| employee_id | int           | NO   | PRI | NULL    |       |
+| ssn         | char(20)      | YES  | UNI | NULL    |       |
+| salary      | decimal(10,0) | NO   |     | NULL    |       |
+| hire_date   | date          | NO   |     | NULL    |       |
+| e_address   | varchar(30)   | YES  |     | NULL    |       |
++-------------+---------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
++-------------------------+
+| Tables_in_db            |
++-------------------------+
+| categories              |
+| employee_pay            |
+| global_locations_backup |
+| locations               |
++-------------------------+
+4 rows in set (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Query OK, 0 rows affected (0.00 sec)
+
++--------------+
+| Tables_in_db |
++--------------+
+| categories   |
+| employee_pay |
+| locations    |
++--------------+
+3 rows in set (0.00 sec)
+
+ERROR 1050 (42S01): Table 'categories' already exists
+ERROR 1062 (23000): Duplicate entry 'FU' for key 'categories.PRIMARY'
++-------------+---------------+
+| Category ID | Category Name |
++-------------+---------------+
+| FU          | furniture     |
++-------------+---------------+
+1 row in set (0.00 sec)
+
+Query OK, 0 rows affected (0.00 sec)
+Rows matched: 1  Changed: 0  Warnings: 0
+
++-------------+---------------+
+| Category ID | Category Name |
++-------------+---------------+
+| FU          | furniture     |
++-------------+---------------+
+1 row in set (0.00 sec)
+
+mysql> tee C:\Users\vampb\Desktop\hmai_assignment04.txt
+mysql> Terminal close -- exit!
